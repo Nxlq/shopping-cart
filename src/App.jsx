@@ -17,7 +17,7 @@ function App() {
     <>
       <MinorNav />
       <NavBar />
-      <HomePage />
+      {/* <HomePage /> */}
       {images && images.map((img, i) => <img src={img} key={i} />)}
     </>
   );
