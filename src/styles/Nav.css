@@ -1,0 +1,68 @@
+.logo {
+  width: 3rem;
+  height: 2.9rem;
+}
+
+.nav-shopping {
+  outline: solid 1px black;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 17.3rem;
+  position: sticky;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #333333;
+  text-decoration: none;
+}
+
+/* --------------------- MINOR NAV STYLING ------------------------- */
+
+.minor-nav__container {
+  background: repeating-linear-gradient(
+    45deg,
+    #cc0000 0px,
+    #cc0000 20px,
+    #ea102a 20px,
+    #ea102a 40px
+  );
+  display: flex;
+  justify-content: space-between;
+  padding: 1.1rem 17.3rem;
+}
+
+.minor-nav__container svg {
+  height: 1rem;
+}
+
+.minor-nav-links {
+  display: flex;
+  list-style: none;
+  font-size: 0.74rem;
+  align-items: center;
+  /* font-weight: 300; */
+  gap: 2rem;
+}
+
+.minor-nav-links.left {
+  gap: 2.8rem;
+}
+
+.minor-nav-links.left li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.minor-nav-links.right {
+}
+
+.minor-nav-links a {
+  color: rgb(244, 244, 244);
+  text-decoration: none;
+}
