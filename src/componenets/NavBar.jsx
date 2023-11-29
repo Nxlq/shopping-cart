@@ -6,16 +6,44 @@ function NavBar() {
       <img className="logo" src="/Target_Bullseye-Logo_Red_transparent.png" />
       <ul className="nav-links">
         <li>
-          <a href="">Categories</a>
+          <a href="">
+            Categories
+            <img
+              className="arrow-dropdown"
+              src="/arrow-down-simple-svgrepo-com (2).svg"
+              alt=""
+            />
+          </a>
         </li>
         <li>
-          <a href="">Deals</a>
+          <a href="">
+            Deals
+            <img
+              className="arrow-dropdown"
+              src="/arrow-down-simple-svgrepo-com (2).svg"
+              alt=""
+            />
+          </a>
         </li>
         <li>
-          <a href="">What&apos;s New</a>
+          <a href="">
+            What&apos;s New
+            <img
+              className="arrow-dropdown"
+              src="/arrow-down-simple-svgrepo-com (2).svg"
+              alt=""
+            />
+          </a>
         </li>
         <li>
-          <a href="">Pickup & Delivery</a>
+          <a href="">
+            Pickup & Delivery
+            <img
+              className="arrow-dropdown"
+              src="/arrow-down-simple-svgrepo-com (2).svg"
+              alt=""
+            />
+          </a>
         </li>
       </ul>
       <div className="search-bar__container">
