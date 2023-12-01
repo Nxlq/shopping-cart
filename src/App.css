@@ -31,6 +31,10 @@ ul {
   margin: 0;
 }
 
+section {
+  margin-top: 1rem;
+}
+
 .home-page {
   padding: var(--page-padding);
   display: flex;
