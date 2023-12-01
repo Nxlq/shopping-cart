@@ -1,7 +1,12 @@
-function HomePage() {
+import TopItemsDisplay from "../componenets/TopItemsDisplay";
+import "/src/App.css";
+
+function HomePage({ topItems }) {
   return (
     <>
-      <div>THIS IS THE HOME PAGE</div>
+      <section className="home-page">
+        <TopItemsDisplay topItems={topItems} />
+      </section>
     </>
   );
 }

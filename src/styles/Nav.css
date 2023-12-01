@@ -13,6 +13,7 @@
     rgba(0, 0, 0, 0.04) 0px 3px 4px;
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .nav-shopping a {
@@ -127,7 +128,8 @@
   );
   display: flex;
   justify-content: space-between;
-  padding: 0.4rem 16.4rem;
+  padding: 0.4rem 0rem;
+  width: 100%;
 }
 
 .minor-nav__container svg {
@@ -145,6 +147,7 @@
 
 .minor-nav-links.right {
   gap: 0.2rem;
+  padding-right: 16.3rem;
 }
 
 .minor-nav-links.right a:hover {
@@ -154,6 +157,7 @@
 
 .minor-nav-links.left {
   gap: 0.5rem;
+  padding-left: 16.3rem;
 }
 
 .minor-nav-links.left li {
