@@ -2,15 +2,15 @@ import TopItemsDisplay from "../componenets/TopItemsDisplay";
 import FeaturedCategories from "../componenets/FeaturedCategories";
 import "/src/App.css";
 
-function HomePage({ topItems }) {
+function HomePage({ allProducts, categories }) {
   return (
     <>
       <div className="home-page">
         <section>
-          <TopItemsDisplay topItems={topItems} />
+          <TopItemsDisplay allProducts={allProducts} />
         </section>
         <section>
-          <FeaturedCategories />
+          <FeaturedCategories categories={categories} />
         </section>
       </div>
     </>

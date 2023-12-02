@@ -4,37 +4,44 @@ import HomePage from "./pages/HomePage";
 import "./App.css";
 import NavBar from "./componenets/NavBar";
 import MinorNav from "./componenets/MinorNavBar";
-import LoadingBar from "./componenets/LoadingBar";
+import useVitalData from "./componenets/useVitalData";
 
 function App() {
-  const [allProducts, setAllProducts] = useState(null);
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const { allProducts, categories, isLoading, error } = useVitalData();
 
-  useEffect(() => {
-    setTimeout(() => {
-      fetch("https://fakestoreapi.com/products?limit=6")
-        .then((res) => {
-          if (res.status >= 400) throw new Error("server error try again");
-          return res.json();
-        })
-        .then((data) => {
-          console.log(data);
-          setAllProducts(data);
-        })
-        .catch((err) => {
-          console.error(err);
-          setError(err);
-        })
-        .finally(() => setIsLoading(false));
-    }, 1000);
-  }, []);
+  if (error)
+    return (
+      <h1>
+        Oops! Something went wrong.. try refreshing the page and hopefully that
+        fixes the issue
+      </h1>
+    );
+
+  // a categorized list of all products
+  const productLog = {};
+
+  // populate the productLog if allProducts have been fetched
+  if (allProducts && categories) {
+    for (const category of categories) {
+      productLog[category] = getProductsInCategory(category);
+    }
+  }
+
+  function getProductsInCategory(categoryName) {
+    return allProducts.filter((product) => product.category === categoryName);
+  }
+
+  console.log({ productLog });
 
   return (
     <>
       <MinorNav />
       <NavBar />
-      {isLoading ? <LoadingBar /> : <HomePage topItems={allProducts} />}
+      {isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <HomePage allProducts={allProducts} categories={categories} />
+      )}
     </>
   );
 }

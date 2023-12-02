@@ -1,13 +1,14 @@
 import ItemCard from "./ItemCard";
 import "/src/styles/TopItemsDisplay.css";
+import LoadingBar from "./LoadingBar";
 
-function TopItemsDisplay({ topItems }) {
+function TopItemsDisplay({ allProducts }) {
   return (
     <>
       <div className="top-items-display">
         <h1>Best-selling Top Items</h1>
         <div className="top-items">
-          {topItems.map((item, i) => (
+          {allProducts.map((item, i) => (
             <ItemCard key={i} itemInfo={item} />
           ))}
         </div>

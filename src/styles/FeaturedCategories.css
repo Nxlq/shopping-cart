@@ -1,3 +1,7 @@
 .featured-categories {
   color: var(--Dark-Header-Text);
 }
+
+.categories {
+  display: flex;
+}
