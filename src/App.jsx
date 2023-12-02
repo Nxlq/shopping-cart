@@ -27,8 +27,37 @@ function App() {
     }
   }
 
+  const topProducts = allProducts && getTopProducts(6);
+
   function getProductsInCategory(categoryName) {
     return allProducts.filter((product) => product.category === categoryName);
+  }
+
+  function getTopProducts(amount) {
+    const topProducts = [];
+    const amtOfProducts = allProducts.length - 1;
+
+    let randomIndex;
+
+    // randomly select the amount of top products
+    for (let i = 0; i < amount; i++) {
+      randomIndex = getRandomIntInclusive(0, amtOfProducts);
+
+      // prevents duplicate items
+      while (topProducts.includes(allProducts[randomIndex])) {
+        randomIndex = getRandomIntInclusive(0, amtOfProducts);
+      }
+
+      topProducts.push(allProducts[randomIndex]);
+    }
+
+    return topProducts;
+  }
+
+  function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
   console.log({ productLog });
@@ -40,7 +69,11 @@ function App() {
       {isLoading ? (
         <h1>Loading...</h1>
       ) : (
-        <HomePage allProducts={allProducts} categories={categories} />
+        <HomePage
+          allProducts={allProducts}
+          categories={categories}
+          topProducts={topProducts}
+        />
       )}
     </>
   );
