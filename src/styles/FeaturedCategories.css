@@ -5,3 +5,11 @@
 .categories {
   display: flex;
 }
+
+.categories img {
+  width: 10rem;
+}
+
+.circle {
+  border-radius: 50%;
+}
