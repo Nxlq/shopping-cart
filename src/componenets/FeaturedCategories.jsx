@@ -1,5 +1,6 @@
 import CategoryDisplay from "./CategoryDisplay";
 import "/src/styles/FeaturedCategories.css";
+import "/src/App.css";
 
 function FeaturedCategories({ categories }) {
   console.log({ categories });

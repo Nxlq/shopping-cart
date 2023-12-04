@@ -1,9 +1,17 @@
 .featured-categories {
+  width: 100%;
   color: var(--Dark-Header-Text);
 }
 
+.featured-categories h1 {
+  font-size: var(--section-header-size);
+  padding-bottom: var(--section-header-padding);
+}
+
 .categories {
+  padding-top: 1rem;
   display: flex;
+  justify-content: space-around;
 }
 
 .categories img {
