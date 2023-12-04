@@ -1,16 +1,21 @@
 .circle-ad-banner {
+  display: flex;
+}
+
+.circle-ad-text {
   background-color: #eaeaea;
   text-align: left;
   padding: 1.5rem 6rem;
+  width: 50%;
 }
 
-.circle-ad-banner h2 {
+.circle-ad-text h2 {
   color: var(--red-header-text);
   font-size: 2rem;
   padding-bottom: 10px;
 }
 
-.circle-ad-banner h3 {
+.circle-ad-text h3 {
   color: var(--Dark-Header-Text);
   font-weight: 400;
   display: flex;
@@ -27,4 +32,24 @@
 
 .circle-text img {
   height: 1rem;
+}
+
+.circle-ad-right {
+  display: flex;
+  background-color: #afacaf;
+  width: 37%;
+}
+
+.circle-ad-right img {
+  height: 100%;
+  padding-left: 1rem;
+}
+
+.rounded-edge {
+  height: 100%;
+  background-color: #afacaf;
+  width: 4rem;
+  display: inline;
+  border-radius: 40%;
+  margin-left: -2rem;
 }
