@@ -9,13 +9,19 @@
 }
 
 .categories {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   display: flex;
   justify-content: space-around;
 }
 
 .categories img {
   width: 10rem;
+}
+
+.category-display h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  padding-top: 0.5rem;
 }
 
 .circle {
