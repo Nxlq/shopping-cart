@@ -1,0 +1,30 @@
+.circle-ad-banner {
+  background-color: #eaeaea;
+  text-align: left;
+  padding: 1.5rem 6rem;
+}
+
+.circle-ad-banner h2 {
+  color: var(--red-header-text);
+  font-size: 2rem;
+  padding-bottom: 10px;
+}
+
+.circle-ad-banner h3 {
+  color: var(--Dark-Header-Text);
+  font-weight: 400;
+  display: flex;
+  gap: 5px;
+}
+
+.circle-text {
+  color: var(--red-header-text);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.circle-text img {
+  height: 1rem;
+}
