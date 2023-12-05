@@ -9,25 +9,25 @@ footer {
   justify-content: space-evenly;
 }
 
-footer ul {
+.footer-top ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-footer a {
-  text-decoration: none;
+.footer-top a {
   color: #333333;
+  text-decoration: none;
   font-size: 12px;
   font-weight: 400;
 }
 
-footer a:hover {
+.footer-top a:hover {
   text-decoration: underline;
 }
 
-footer h3 {
+.footer-top h3 {
   color: #333333;
   font-size: 1.1rem;
   /* text-align: left; */
@@ -45,4 +45,19 @@ footer h3 {
 
 .footer-bottom {
   background-color: #333333;
+  color: #e5f9ff;
+  padding: 1.8rem;
+  display: flex;
+}
+
+.foot-legal-links a {
+  color: #e5f9ff;
+  text-decoration: none;
+}
+
+.foot-legal-links ul {
+  list-style: none;
+  display: flex;
+  font-size: 12px;
+  gap: 1rem;
 }

@@ -136,6 +136,38 @@ function ServicesFoot() {
   );
 }
 
+function FooterSocials() {
+  return <div className="foot-socials__container"></div>;
+}
+
+function FooterLegalLinks() {
+  return (
+    <div className="foot-legal-links">
+      <ul>
+        <li>
+          <a href="">Terms</a>
+        </li>
+        <li>
+          <a href="">CA Supply Chain</a>
+        </li>
+        <li>
+          <a href="">Privacy</a>
+        </li>
+        <li>
+          <a href="">CA Privacy Rights</a>
+        </li>
+        <li>
+          <a href="">Your Privacy Choices</a>
+        </li>
+        <li>
+          <a href="">Internet Based Ads</a>
+        </li>
+        <li>TM & © 2023 Target Brands, Inc.</li>
+      </ul>
+    </div>
+  );
+}
+
 function Footer() {
   return (
     <footer>
@@ -146,7 +178,9 @@ function Footer() {
         <ServicesFoot />
       </div>
       <div className="footer-image"></div>
-      <div className="footer-bottom"></div>
+      <div className="footer-bottom">
+        <FooterLegalLinks />
+      </div>
     </footer>
   );
 }
