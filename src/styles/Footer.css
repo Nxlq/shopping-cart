@@ -6,7 +6,14 @@ footer {
 .footer-top {
   display: flex;
   padding: 2rem;
-  justify-content: space-evenly;
+  justify-content: center;
+  padding-bottom: 4rem;
+}
+
+.footer-top__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
 }
 
 .footer-top ul {

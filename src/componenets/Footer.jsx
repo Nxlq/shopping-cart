@@ -211,10 +211,12 @@ function Footer() {
   return (
     <footer>
       <div className="footer-top">
-        <AboutUsFoot />
-        <HelpFoot />
-        <StoresFoot />
-        <ServicesFoot />
+        <div className="footer-top__wrapper">
+          <AboutUsFoot />
+          <HelpFoot />
+          <StoresFoot />
+          <ServicesFoot />
+        </div>
       </div>
       <div className="footer-image"></div>
       <div className="footer-bottom">
