@@ -137,7 +137,46 @@ function ServicesFoot() {
 }
 
 function FooterSocials() {
-  return <div className="foot-socials__container"></div>;
+  return (
+    <div className="foot-socials__container">
+      <div className="icon-container">
+        <img
+          className="social-icon-foot"
+          src="/social-icons/pinterest-svgrepo-com.svg"
+        />
+      </div>
+      <div className="icon-container">
+        <img
+          className="social-icon-foot"
+          src="/social-icons/facebook-176-svgrepo-com.svg"
+        />
+      </div>
+      <div className="icon-container">
+        <img
+          className="social-icon-foot"
+          src="/social-icons/instagram-svgrepo-com (1).svg"
+        />
+      </div>
+      <div className="icon-container">
+        <img
+          className="social-icon-foot"
+          src="/social-icons/twitter-154-svgrepo-com.svg"
+        />
+      </div>
+      <div className="icon-container">
+        <img
+          className="social-icon-foot"
+          src="/social-icons/youtube-168-svgrepo-com.svg"
+        />
+      </div>
+      <div className="icon-container">
+        <img
+          className="social-icon-foot"
+          src="/social-icons/tiktok-svgrepo-com.svg"
+        />
+      </div>
+    </div>
+  );
 }
 
 function FooterLegalLinks() {
@@ -179,7 +218,10 @@ function Footer() {
       </div>
       <div className="footer-image"></div>
       <div className="footer-bottom">
-        <FooterLegalLinks />
+        <div className="footer-bottom__wrapper">
+          <FooterSocials />
+          <FooterLegalLinks />
+        </div>
       </div>
     </footer>
   );
