@@ -4,7 +4,7 @@ function CircleAdBanner() {
   return (
     <div className="circle-ad-banner">
       <div className="circle-ad-text">
-        <h2>
+        <h2 className="ad-header">
           Get access to hundreds of deals,<br></br> plus offers just for you
         </h2>
         <h3>

@@ -2,6 +2,7 @@ import TopItemsDisplay from "../componenets/TopItemsDisplay";
 import FeaturedCategories from "../componenets/FeaturedCategories";
 import "/src/App.css";
 import CircleAdBanner from "../componenets/CircleAdBanner";
+import CardAdBanner from "../componenets/CardAdBanner";
 
 function HomePage({ allProducts, categories, topProducts }) {
   return (
@@ -18,6 +19,9 @@ function HomePage({ allProducts, categories, topProducts }) {
         </section>
         <section>
           <CircleAdBanner />
+        </section>
+        <section>
+          <CardAdBanner />
         </section>
       </div>
     </>
