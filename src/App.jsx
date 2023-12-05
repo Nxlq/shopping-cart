@@ -5,6 +5,7 @@ import "./App.css";
 import NavBar from "./componenets/NavBar";
 import MinorNav from "./componenets/MinorNavBar";
 import useVitalData from "./componenets/useVitalData";
+import Footer from "./componenets/Footer";
 
 function App() {
   const { allProducts, categories, isLoading, error } = useVitalData();
@@ -75,6 +76,7 @@ function App() {
           topProducts={topProducts}
         />
       )}
+      <Footer />
     </>
   );
 }
