@@ -8,7 +8,7 @@ function CircleAdBanner() {
           Get access to hundreds of deals,<br></br> plus offers just for you
         </h2>
         <h3>
-          You&apos;re invited to join{" "}
+          You&apos;re invited to join
           <div>
             <span className="circle-text">
               <img src="/Target_Bullseye-Logo_Red_transparent.png" alt="" />

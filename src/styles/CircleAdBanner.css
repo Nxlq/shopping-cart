@@ -10,7 +10,7 @@
 }
 
 .ad-header {
-  color: var(--red-header-text);
+  color: #cc0000;
   font-size: 2rem;
   padding-bottom: 10px;
 }
