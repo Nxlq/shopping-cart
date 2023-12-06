@@ -1,15 +1,15 @@
-.card-ad-banner {
+.card-banner {
   display: flex;
 }
 
-.card-ad-text {
+.card-banner-text {
   background-color: #eaeaea;
   text-align: left;
   padding: 1.5rem 6rem;
   width: 60%;
 }
 
-.ad-header {
+.banner-header {
   color: #cc0000;
   font-size: 2rem;
   padding-bottom: 10px;
@@ -23,11 +23,11 @@
   padding-left: 10px;
 }
 
-.card-ad-text h2 {
+.card-banner-text h2 {
   padding-bottom: 0.3rem;
 }
 
-.card-ad-text h3 {
+.card-banner-text h3 {
   color: var(--Dark-Header-Text);
   font-weight: 400;
   font-size: 1rem;
@@ -42,8 +42,8 @@
   padding-top: 1.2rem;
 }
 
-.card-ad-banner:hover span,
-.card-ad-banner:hover h3 {
+.card-banner:hover span,
+.card-banner:hover h3 {
   text-decoration: underline;
 }
 
@@ -59,14 +59,14 @@
   height: 1rem;
 }
 
-.card-ad-right {
+.card-banner-right {
   display: flex;
   background-color: #afacaf;
   width: 35%;
   align-items: center;
 }
 
-.card-ad-right img {
+.card-banner-right img {
   height: 73%;
   padding-left: 1rem;
 }

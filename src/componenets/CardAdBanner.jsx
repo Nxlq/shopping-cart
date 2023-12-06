@@ -2,9 +2,9 @@ import "/src/styles/CardAdBanner.css";
 
 function CardAdBanner() {
   return (
-    <div className="card-ad-banner">
-      <div className="card-ad-text">
-        <h2 className="card-header ad-header">
+    <div className="card-banner">
+      <div className="card-banner-text">
+        <h2 className="card-header banner-header">
           <span>Save 5%</span>
           <span className="dark-gray">Get More</span>
           <span className="gray">Every Day. **</span>
@@ -20,7 +20,7 @@ function CardAdBanner() {
           </span>
         </div>
       </div>
-      <div className="card-ad-right">
+      <div className="card-banner-right">
         <div className="rounded-edge"></div>
         <img src="/crd.png" alt="" />
       </div>

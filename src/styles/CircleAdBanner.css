@@ -1,21 +1,21 @@
-.circle-ad-banner {
+.circle-banner {
   display: flex;
 }
 
-.circle-ad-text {
+.circle-banner-text {
   background-color: #eaeaea;
   text-align: left;
   padding: 1.5rem 6rem;
   width: 60%;
 }
 
-.ad-header {
+.banner-header {
   color: #cc0000;
   font-size: 2rem;
   padding-bottom: 10px;
 }
 
-.circle-ad-text h3 {
+.circle-banner-text h3 {
   color: var(--Dark-Header-Text);
   font-weight: 400;
   display: flex;
@@ -35,13 +35,13 @@
   height: 1rem;
 }
 
-.circle-ad-right {
+.circle-banner-right {
   display: flex;
   background-color: #afacaf;
   width: 35%;
 }
 
-.circle-ad-right img {
+.circle-banner-right img {
   height: 100%;
   padding-left: 1rem;
 }
@@ -63,7 +63,7 @@
   color: #666666;
 }
 
-.circle-ad-banner:hover h2,
-.circle-ad-banner:hover h3 {
+.circle-banner:hover h2,
+.circle-banner:hover h3 {
   text-decoration: underline;
 }
