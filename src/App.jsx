@@ -6,6 +6,7 @@ import NavBar from "./componenets/NavBar";
 import MinorNav from "./componenets/MinorNavBar";
 import useVitalData from "./componenets/useVitalData";
 import Footer from "./componenets/Footer";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 function App() {
   const { allProducts, categories, isLoading, error } = useVitalData();
@@ -63,22 +64,44 @@ function App() {
 
   console.log({ productLog });
 
-  return (
-    <>
-      <MinorNav />
-      <NavBar />
-      {isLoading ? (
-        <h1>Loading...</h1>
-      ) : (
+  const router = createBrowserRouter([
+    {
+      errorElement: <h1>OOOPS ERROR UHOH! @o@</h1>,
+      path: "/",
+      element: (
         <HomePage
           allProducts={allProducts}
           categories={categories}
           topProducts={topProducts}
         />
-      )}
+      ),
+    },
+  ]);
+
+  return (
+    <>
+      <MinorNav />
+      <NavBar />
+      {isLoading ? <h1>Loading...</h1> : <RouterProvider router={router} />}
+
       <Footer />
     </>
   );
 }
 
 export default App;
+
+{
+  /* <MinorNav />
+<NavBar />
+{isLoading ? (
+  <h1>loading...</h1>
+) : (
+  <HomePage
+    allProducts={allProducts}
+    categories={categories}
+    topProducts={topProducts}
+  />
+)}
+<Footer /> */
+}
