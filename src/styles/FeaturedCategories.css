@@ -26,6 +26,14 @@
   padding-top: 0.5rem;
 }
 
+.category-display:hover h3 {
+  text-decoration: underline;
+}
+
+.category-display:hover {
+  cursor: pointer;
+}
+
 .circle {
   border-radius: 50%;
 }
