@@ -9,6 +9,10 @@
   align-items: center;
 }
 
+.item-card:hover h4 {
+  text-decoration: underline;
+}
+
 .item-card > img {
   width: 150px;
   height: 180px;
