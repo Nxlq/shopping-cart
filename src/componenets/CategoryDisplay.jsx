@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function formatCategoryHeader(categoryName) {
   const words = categoryName.split(" ");
   const formattedWords = words.map(
@@ -11,14 +13,16 @@ function CategoryDisplay({ category }) {
   const formattedHeader = formatCategoryHeader(category);
 
   return (
-    <div className="category-display">
-      <img
-        className="circle"
-        src={`/category-images/${category}.jpg`}
-        alt={`${category} image link`}
-      />
-      <h3>{formattedHeader}</h3>
-    </div>
+    <Link to={`category/${category}`}>
+      <div className="category-display">
+        <img
+          className="circle"
+          src={`/category-images/${category}.jpg`}
+          alt={`${category} image link`}
+        />
+        <h3>{formattedHeader}</h3>
+      </div>
+    </Link>
   );
 }
 

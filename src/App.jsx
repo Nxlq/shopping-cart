@@ -7,6 +7,7 @@ import MinorNav from "./componenets/MinorNavBar";
 import useVitalData from "./componenets/useVitalData";
 import Footer from "./componenets/Footer";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import CategoryPage from "./pages/CategoryPage";
 
 function App() {
   const { allProducts, categories, isLoading, error } = useVitalData();
@@ -75,6 +76,10 @@ function App() {
           topProducts={topProducts}
         />
       ),
+    },
+    {
+      path: "category/:categoryName",
+      element: <CategoryPage productLog={productLog} />,
     },
   ]);
 

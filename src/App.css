@@ -39,6 +39,10 @@ section {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 .home-page {
   padding: var(--page-padding);
   max-width: 1200px;
