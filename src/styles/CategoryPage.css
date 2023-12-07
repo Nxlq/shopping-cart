@@ -1,0 +1,18 @@
+.category-page h1 {
+  color: var(--Dark-Header-Text);
+  text-align: center;
+  padding-bottom: 1.1rem;
+}
+
+.category-items__container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-items__container .item-card {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px -1px 6px, rgba(0, 0, 0, 0.04) 0px 1px 3px,
+    rgba(0, 0, 0, 0.06) 0px 3px 5px, rgba(0, 0, 0, 0.04) 0px 4px 6px;
+  border: 1px solid rgb(247, 247, 247);
+}
