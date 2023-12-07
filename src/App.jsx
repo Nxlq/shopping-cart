@@ -12,6 +12,8 @@ import CategoryPage from "./pages/CategoryPage";
 function App() {
   const { allProducts, categories, isLoading, error } = useVitalData();
 
+  console.log({ allProducts });
+
   if (error)
     return (
       <h1>

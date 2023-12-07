@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const ALL_PRODUCTS_URL = "https://fakestoreapi.com/products";
 const CATEGORIES_URL = "https://fakestoreapi.com/products/categories";
@@ -22,6 +23,7 @@ function useVitalData() {
         .then((json) => Promise.all(json))
         .then((data) => {
           const [allProducts, categories] = data;
+          allProducts.forEach((product) => (product.id = uuidv4()));
           setAllProducts(allProducts);
           setCategories(categories);
           return data;
