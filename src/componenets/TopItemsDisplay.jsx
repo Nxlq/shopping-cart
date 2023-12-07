@@ -2,7 +2,7 @@ import ItemCard from "./ItemCard";
 import "/src/styles/TopItemsDisplay.css";
 import LoadingBar from "./LoadingBar";
 
-function TopItemsDisplay({ allProducts, topProducts }) {
+function TopItemsDisplay({ topProducts }) {
   if (!topProducts) return;
 
   return (
@@ -10,8 +10,8 @@ function TopItemsDisplay({ allProducts, topProducts }) {
       <div className="top-items-display">
         <h1>Best-selling Top Items</h1>
         <div className="top-items">
-          {topProducts.map((item, i) => (
-            <ItemCard key={i} itemInfo={item} />
+          {topProducts.map((item) => (
+            <ItemCard key={item.id} itemInfo={item} />
           ))}
         </div>
       </div>

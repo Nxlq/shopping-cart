@@ -8,8 +8,8 @@ function FeaturedCategories({ categories }) {
     <div className="featured-categories">
       <h1>Featured Categories</h1>
       <div className="categories">
-        {categories.map((category, i) => (
-          <CategoryDisplay key={i} category={category} />
+        {categories.map((category) => (
+          <CategoryDisplay key={category} category={category} />
         ))}
       </div>
     </div>

@@ -12,7 +12,7 @@ export default function CategoryPage({ productLog }) {
   return (
     <div className="category-items__container">
       {categoriesProducts.map((product) => (
-        <ItemCard itemInfo={product} key={product.name} />
+        <ItemCard itemInfo={product} key={product.id} />
       ))}
     </div>
   );
