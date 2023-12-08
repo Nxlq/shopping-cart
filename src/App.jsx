@@ -88,9 +88,8 @@ function App() {
   return (
     <>
       <MinorNav />
-      <NavBar />
+      <NavBar categories={categories} />
       {isLoading ? <h1>Loading...</h1> : <RouterProvider router={router} />}
-
       <Footer />
     </>
   );
