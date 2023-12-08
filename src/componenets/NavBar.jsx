@@ -67,7 +67,12 @@ function DropDownCategories({ categories }) {
                 const formattedCat = formatCategoryHeader(cat);
                 return (
                   <li key={cat}>
-                    <Link to={`category/${cat}`}>{formattedCat}</Link>
+                    <Link
+                      onClick={() => setIsActive(false)}
+                      to={`category/${cat}`}
+                    >
+                      {formattedCat}
+                    </Link>
                   </li>
                 );
               })}
