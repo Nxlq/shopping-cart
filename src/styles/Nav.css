@@ -161,12 +161,12 @@
 }
 
 .dropdown li a {
-  padding: 1rem 0rem;
+  padding: 1rem 0rem !important;
 }
 
 .dropdown li:hover a {
   text-decoration: underline;
-  background-color: inherit;
+  background-color: inherit !important;
 }
 
 .dropdown li:not(:last-child) {
