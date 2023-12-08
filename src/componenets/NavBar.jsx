@@ -87,7 +87,12 @@ function NavBar({ categories }) {
   return (
     <>
       <nav className="nav-shopping">
-        <img className="logo" src="/Target_Bullseye-Logo_Red_transparent.png" />
+        <Link className="logo-link" to="/">
+          <img
+            className="logo"
+            src="/Target_Bullseye-Logo_Red_transparent.png"
+          />
+        </Link>
         <ul className="nav-links">
           <li id="categories-btn">
             <DropDownCategories categories={categories} />

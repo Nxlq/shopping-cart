@@ -33,7 +33,7 @@
   padding-right: 2rem;
 }
 
-.nav-shopping a {
+.nav-shopping a:not(.logo-link) {
   color: #333333;
   text-decoration: none;
   padding: 0.8rem 0.9rem;
@@ -41,7 +41,7 @@
   /* text-wrap: nowrap; */
 }
 
-.nav-shopping a:hover {
+.nav-shopping a:not(.logo-link):hover {
   background-color: #f7f7f7;
 }
 
