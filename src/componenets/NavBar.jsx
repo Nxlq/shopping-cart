@@ -1,31 +1,44 @@
 import "/src/styles/Nav.css";
 import { formatCategoryHeader } from "../helperFunctions";
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-function DropDownCategories({
-  categories,
-  isActive,
-  closeDropDown,
-  toggleDropDown,
-}) {
+function DropDownCategories({ categories }) {
+  const [isActive, setIsActive] = useState(false);
+  const { pathname } = useLocation();
+
   const dropDownRef = useRef(null);
   const dropDownButtonRef = useRef(null);
 
+  function toggleDropDown() {
+    setIsActive(!isActive);
+  }
+
+  // this effect handles closing the drop down when the user clicks anywhere except the component itself while the dropdown is open
   useEffect(() => {
     if (!isActive) return;
 
+    // close the drop down when the user clicks something other than the button or dropdown menu
     function handleOutsideClick(e) {
-      console.log(dropDownButtonRef.current.contains(e.target));
-      if (!dropDownButtonRef.current.contains(e.target)) {
-        closeDropDown();
+      if (
+        !dropDownButtonRef.current.contains(e.target) &&
+        !dropDownRef.current.contains(e.target)
+      ) {
+        setIsActive(false);
       }
     }
 
     document.addEventListener("mousedown", handleOutsideClick);
 
-    return () => document.removeEventListener("mousedown", handleOutsideClick);
-  }, [isActive, closeDropDown]);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [isActive]);
+
+  // this effect handles closing the drop down when the url changes
+  useEffect(() => {
+    setIsActive(false);
+  }, [pathname]);
 
   return (
     <>
@@ -54,7 +67,7 @@ function DropDownCategories({
                 const formattedCat = formatCategoryHeader(cat);
                 return (
                   <li key={cat}>
-                    <a to="/">{formattedCat}</a>
+                    <Link to={`category/${cat}`}>{formattedCat}</Link>
                   </li>
                 );
               })}
@@ -66,33 +79,13 @@ function DropDownCategories({
 }
 
 function NavBar({ categories }) {
-  const [isDropDownActive, setIsDropDownActive] = useState(false);
-
-  function toggleDropDown() {
-    setIsDropDownActive(!isDropDownActive);
-  }
-
-  function openDropDown() {
-    setIsDropDownActive(true);
-  }
-
-  function closeDropDown() {
-    setIsDropDownActive(false);
-  }
-
   return (
     <>
       <nav className="nav-shopping">
         <img className="logo" src="/Target_Bullseye-Logo_Red_transparent.png" />
         <ul className="nav-links">
           <li id="categories-btn">
-            <DropDownCategories
-              categories={categories}
-              isActive={isDropDownActive}
-              openDropDown={openDropDown}
-              closeDropDown={closeDropDown}
-              toggleDropDown={toggleDropDown}
-            />
+            <DropDownCategories categories={categories} />
           </li>
           <li>
             <a onClick={(e) => e.preventDefault()} href="">

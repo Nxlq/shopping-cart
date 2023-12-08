@@ -6,7 +6,7 @@ import NavBar from "./componenets/NavBar";
 import MinorNav from "./componenets/MinorNavBar";
 import useVitalData from "./componenets/useVitalData";
 import Footer from "./componenets/Footer";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import CategoryPage from "./pages/CategoryPage";
 
 function App() {
@@ -72,25 +72,36 @@ function App() {
       errorElement: <h1>OOOPS ERROR UHOH! @o@</h1>,
       path: "/",
       element: (
-        <HomePage
-          allProducts={allProducts}
-          categories={categories}
-          topProducts={topProducts}
-        />
+        <>
+          <MinorNav />
+          <NavBar categories={categories} />
+          <Outlet />
+          <Footer />
+        </>
       ),
-    },
-    {
-      path: "category/:categoryName",
-      element: <CategoryPage productLog={productLog} />,
+      children: [
+        {
+          index: true,
+          element: (
+            <HomePage
+              allProducts={allProducts}
+              categories={categories}
+              topProducts={topProducts}
+              isLoading={isLoading}
+            />
+          ),
+        },
+        {
+          path: "category/:categoryName",
+          element: <CategoryPage productLog={productLog} />,
+        },
+      ],
     },
   ]);
 
   return (
     <>
-      <MinorNav />
-      <NavBar categories={categories} />
-      {isLoading ? <h1>Loading...</h1> : <RouterProvider router={router} />}
-      <Footer />
+      <RouterProvider router={router} fallbackElement={<h1>Loading...</h1>} />
     </>
   );
 }

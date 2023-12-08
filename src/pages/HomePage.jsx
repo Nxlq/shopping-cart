@@ -4,7 +4,9 @@ import "/src/App.css";
 import CircleAdBanner from "../componenets/CircleAdBanner";
 import CardAdBanner from "../componenets/CardAdBanner";
 
-function HomePage({ allProducts, categories, topProducts }) {
+function HomePage({ allProducts, categories, topProducts, isLoading }) {
+  if (isLoading) return <h1>Loading...</h1>;
+
   return (
     <>
       <div className="home-page">

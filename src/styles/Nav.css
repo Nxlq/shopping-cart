@@ -158,6 +158,9 @@
   text-align: left;
   font-weight: 400;
   font-size: 1rem;
+}
+
+.dropdown li a {
   padding: 1rem 0rem;
 }
 
