@@ -144,10 +144,10 @@
 }
 
 .dropdown h2 {
-  font-size: 1.4rem;
-  padding: 1.3rem 0rem;
+  font-size: 1.25rem;
+  padding: 1.2rem 0rem;
   text-align: left;
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px #afacaf;
 }
 
 .dropdown li {
@@ -157,7 +157,7 @@
   /* align-items: flex-start; */
   text-align: left;
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding: 1rem 0rem;
 }
 
@@ -167,7 +167,7 @@
 }
 
 .dropdown li:not(:last-child) {
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px #afacaf;
 }
 
 .dropdown a {
