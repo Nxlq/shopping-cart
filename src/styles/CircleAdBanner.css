@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.circle-banner:hover {
+  cursor: pointer;
+}
+
 .circle-banner-text {
   background-color: #eaeaea;
   text-align: left;

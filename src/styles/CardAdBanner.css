@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.card-banner:hover {
+  cursor: pointer;
+}
+
 .card-banner-text {
   background-color: #eaeaea;
   text-align: left;

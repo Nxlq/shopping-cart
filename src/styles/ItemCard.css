@@ -9,6 +9,10 @@
   align-items: center;
 }
 
+.item-card:hover {
+  cursor: pointer;
+}
+
 .item-card:hover h4 {
   text-decoration: underline;
 }
@@ -33,6 +37,7 @@
 
 .item-card > button:hover {
   background-color: #ac0303;
+  cursor: pointer;
 }
 
 .item-price {
