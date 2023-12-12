@@ -36,11 +36,14 @@ function App() {
   const topProducts = allProducts && getTopProducts(6);
 
   function getProductsInCategory(categoryName) {
+    if (!allProducts) return;
     return allProducts.filter((product) => product.category === categoryName);
   }
 
   function getProductInfo(productId) {
-    const productInfo = allProducts.find((product) => product.id === productId);
+    if (!allProducts) return;
+    const productInfo = allProducts.find((product) => product.id == productId);
+    console.log({ productInfo }, " from the function");
     return productInfo;
   }
 
@@ -87,7 +90,7 @@ function App() {
       ),
       children: [
         {
-          index: true,
+          path: "/",
           element: (
             <HomePage
               allProducts={allProducts}

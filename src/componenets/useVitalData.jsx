@@ -23,7 +23,6 @@ function useVitalData() {
         .then((json) => Promise.all(json))
         .then((data) => {
           const [allProducts, categories] = data;
-          allProducts.forEach((product) => (product.id = uuidv4()));
           setAllProducts(allProducts);
           setCategories(categories);
           return data;

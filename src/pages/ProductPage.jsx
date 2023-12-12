@@ -1,15 +1,23 @@
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function ProductPage({ getProductInfo }) {
   const { itemId } = useParams();
 
   const productInfo = getProductInfo(itemId);
 
+  console.log({ productInfo });
+
   return (
     <>
-      <h1>PRODUCT PAGE WOOHOO</h1>
-      <h2>{productInfo.title}</h2>
-      <img src={productInfo.image}></img>
+      {productInfo && (
+        <div className="product-page">
+          <img className="product-image" src={`${productInfo.image}`}></img>
+          <div className="product-information">
+            <h2>{productInfo.title}</h2>
+          </div>
+        </div>
+      )}
     </>
   );
 }
