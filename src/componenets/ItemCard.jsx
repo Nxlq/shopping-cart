@@ -1,15 +1,24 @@
 import { Link } from "react-router-dom";
 import "/src/styles/ItemCard.css";
+import { formatNameForSEO } from "../helperFunctions";
 
 function ItemCard({ itemInfo }) {
+  // we format the item name's path to optimize it for googles SEO, replaces the default encoded %20 from spaces to a hyphen
+  const formattedPathTitle = formatNameForSEO(itemInfo.title);
+
   return (
     <div className="item-card">
-      <Link to="/product/itemId" className="item-card-link">
+      <Link
+        to={`/product/${itemInfo.id}/${formattedPathTitle}`}
+        className="item-card-link"
+      >
         <img className="" src={itemInfo.image} alt="" />
         <h4 className="item-price">${itemInfo.price}</h4>
         <h4 className="item-title">{itemInfo.title}</h4>
       </Link>
-      <button onClick={() => console.log("lk")}>Add to cart</button>
+      <button onClick={() => console.log("should add to cart")}>
+        Add to cart
+      </button>
     </div>
   );
 }

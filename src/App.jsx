@@ -8,6 +8,7 @@ import useVitalData from "./componenets/useVitalData";
 import Footer from "./componenets/Footer";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import CategoryPage from "./pages/CategoryPage";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
   const { allProducts, categories, isLoading, error } = useVitalData();
@@ -96,8 +97,8 @@ function App() {
           element: <CategoryPage productLog={productLog} />,
         },
         {
-          path: "product/:itemId",
-          element: <h1>THE PRODUCT PAGE WOOHOO</h1>,
+          path: "product/:itemId/:itemName",
+          element: <ProductPage />,
         },
       ],
     },
