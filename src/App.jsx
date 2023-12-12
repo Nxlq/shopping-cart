@@ -95,6 +95,10 @@ function App() {
           path: "category/:categoryName",
           element: <CategoryPage productLog={productLog} />,
         },
+        {
+          path: "product/:itemId",
+          element: <h1>THE PRODUCT PAGE WOOHOO</h1>,
+        },
       ],
     },
   ]);
