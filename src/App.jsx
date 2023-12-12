@@ -39,6 +39,11 @@ function App() {
     return allProducts.filter((product) => product.category === categoryName);
   }
 
+  function getProductInfo(productId) {
+    const productInfo = allProducts.find((product) => product.id === productId);
+    return productInfo;
+  }
+
   function getTopProducts(amount) {
     const topProducts = [];
     const amtOfProducts = allProducts.length - 1;
@@ -98,7 +103,7 @@ function App() {
         },
         {
           path: "product/:itemId/:itemName",
-          element: <ProductPage />,
+          element: <ProductPage getProductInfo={getProductInfo} />,
         },
       ],
     },
