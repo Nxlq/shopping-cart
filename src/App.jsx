@@ -43,7 +43,6 @@ function App() {
   function getProductInfo(productId) {
     if (!allProducts) return;
     const productInfo = allProducts.find((product) => product.id == productId);
-    console.log({ productInfo }, " from the function");
     return productInfo;
   }
 

@@ -1,4 +1,22 @@
 .product-page {
+  max-width: 1200px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+.product-page .product-image {
+  width: 350px;
+  height: auto;
+}
+
+.product-information {
+  text-align: left;
+}
+
+.symbols__container {
+  display: flex;
+}
+.rating-symbol {
+  width: 20px;
+  height: auto;
 }
