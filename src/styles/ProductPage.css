@@ -13,10 +13,44 @@
   text-align: left;
 }
 
+.product-information .product-header {
+  color: var(--Dark-Header-Text);
+}
+
 .symbols__container {
   display: flex;
 }
+
 .rating-symbol {
-  width: 20px;
+  width: 18px;
   height: auto;
+}
+
+.ratings-questions,
+.rating-number {
+  color: #7c7c7c;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+.ratings-questions:hover,
+.rating-number:hover {
+  color: #606060;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* .ratings-questions {
+  border-left: solid 1px black;
+} */
+
+.ratings-info {
+  display: flex;
+  gap: 7px;
+}
+
+.rating {
+  display: flex;
+  align-items: flex-end;
+  gap: 7px;
 }

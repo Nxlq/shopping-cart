@@ -5,7 +5,7 @@ import Rating from "../componenets/Rating";
 function ProductInformation({ productInfo, productRating, amountOfRatings }) {
   return (
     <div className="product-information">
-      <h2>{productInfo.title}</h2>
+      <h2 className="product-header">{productInfo.title}</h2>
       <Rating productRating={productRating} amountOfRatings={amountOfRatings} />
     </div>
   );
