@@ -1,6 +1,13 @@
+import { useState } from "react";
 import "/src/styles/OrderTypeSelection.css";
 
-function OrderTypeCard({ imgPath, orderType }) {
+function OrderTypeCard({
+  imgPath,
+  orderType,
+  isActive,
+  cardId,
+  setActiveCard,
+}) {
   // only going through all this date stuff to create a more realistic fulfillment dates
   // not going to bother refactoring it into its own function for this project as its not important
   const curDate = new Date();
@@ -34,7 +41,10 @@ function OrderTypeCard({ imgPath, orderType }) {
     } ${shippingTime.getDate()}`,
   };
   return (
-    <button className="order-type-card">
+    <button
+      onClick={() => setActiveCard(cardId)}
+      className={`order-type-card ${isActive ? "active" : ""}`}
+    >
       <img className="order-type-icon" src={imgPath} alt="" />
       <span className="order-type-text">{orderType}</span>
       <span className="order-time">
@@ -49,20 +59,35 @@ function OrderTypeCard({ imgPath, orderType }) {
 }
 
 function OrderTypeSelection() {
+  const [selectedCardId, setSelectedCardId] = useState(0);
+
+  function setActiveCard(cardId) {
+    setSelectedCardId(cardId);
+  }
+
   return (
     <div className="order-types__container">
       <div className="order-types">
         <OrderTypeCard
           imgPath={"/store-svgrepo-com.svg"}
           orderType={"Pickup"}
+          cardId={0}
+          isActive={0 === selectedCardId}
+          setActiveCard={setActiveCard}
         />
         <OrderTypeCard
           imgPath={"/delivery-svgrepo-com.svg"}
           orderType={"Delivery"}
+          cardId={1}
+          isActive={1 === selectedCardId}
+          setActiveCard={setActiveCard}
         />
         <OrderTypeCard
           imgPath={"/shipping-left-svgrepo-com.svg"}
           orderType={"Shipping"}
+          cardId={2}
+          isActive={2 === selectedCardId}
+          setActiveCard={setActiveCard}
         />
       </div>
     </div>
