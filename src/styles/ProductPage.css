@@ -13,8 +13,14 @@
   text-align: left;
 }
 
-.product-information .product-header {
+.product-information .product-header,
+.product-information .product-price {
   color: var(--Dark-Header-Text);
+}
+
+.price-disclaimer {
+  font-size: 0.9rem;
+  color: #7c7c7c;
 }
 
 .symbols__container {
@@ -31,6 +37,7 @@
   color: #7c7c7c;
   text-decoration: underline;
   font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .ratings-questions:hover,

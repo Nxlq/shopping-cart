@@ -7,6 +7,8 @@ function ProductInformation({ productInfo, productRating, amountOfRatings }) {
     <div className="product-information">
       <h2 className="product-header">{productInfo.title}</h2>
       <Rating productRating={productRating} amountOfRatings={amountOfRatings} />
+      <h2 className="product-price">${productInfo.price}</h2>
+      <span className="price-disclaimer">When purchased online</span>
     </div>
   );
 }
