@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "/src/styles/OrderTypeSelection.css";
+import { useRef } from "react";
 
 function OrderTypeCard({
   imgPath,
@@ -40,8 +41,29 @@ function OrderTypeCard({
       months[shippingTime.getMonth()]
     } ${shippingTime.getDate()}`,
   };
+
+  const buttonWrapper = useRef(null);
+
+  // listens for clicks to toggle dashed border
+  useEffect(() => {
+    if (!isActive) return;
+    function removeDashedBorder(e) {
+      if (!buttonWrapper.current.contains(e.target)) {
+        buttonWrapper.current.classList.remove("dashed");
+      } else if (buttonWrapper.current.contains(e.target)) {
+        buttonWrapper.current.classList.add("dashed");
+      }
+    }
+
+    window.addEventListener("mousedown", removeDashedBorder);
+    return () => window.removeEventListener("mousedown", removeDashedBorder);
+  }, [isActive]);
+
   return (
-    <div className={`button__wrapper ${isActive ? "dashed" : ""}`}>
+    <div
+      ref={buttonWrapper}
+      className={`button__wrapper ${isActive ? "dashed" : ""}`}
+    >
       <button
         onClick={() => setActiveCard(cardId)}
         className={`order-type-card ${isActive ? "active" : ""}`}

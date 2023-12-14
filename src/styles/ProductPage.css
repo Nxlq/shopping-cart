@@ -11,11 +11,18 @@
 
 .product-information {
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .product-information .product-header,
 .product-information .product-price {
   color: var(--Dark-Header-Text);
+}
+
+.product-price {
+  padding: 0.4rem 0rem;
 }
 
 .price-disclaimer {
