@@ -37,7 +37,7 @@ function OrderTypeCard({ imgPath, orderType }) {
     <button className="order-type-card">
       <img className="order-type-icon" src={imgPath} alt="" />
       <span className="order-type-text">{orderType}</span>
-      <span>
+      <span className="order-time">
         {orderType === "Pickup"
           ? `Ready within ${fulfillmentTimes.pickup} hours`
           : orderType === "Delivery"
@@ -57,11 +57,11 @@ function OrderTypeSelection() {
           orderType={"Pickup"}
         />
         <OrderTypeCard
-          imgPath={"/store-svgrepo-com.svg"}
+          imgPath={"/delivery-svgrepo-com.svg"}
           orderType={"Delivery"}
         />
         <OrderTypeCard
-          imgPath={"/store-svgrepo-com.svg"}
+          imgPath={"/shipping-left-svgrepo-com.svg"}
           orderType={"Shipping"}
         />
       </div>

@@ -1,10 +1,13 @@
 .order-type-card {
+  width: 160px;
   background-color: white;
   border: solid 1px #7c7c7c;
   border-radius: 10px;
-  padding: 0.5rem;
+  padding: 0.8rem;
   display: flex;
   flex-direction: column;
+  text-align: left;
+  gap: 0.3rem;
 }
 
 .order-type-card:hover {
@@ -13,14 +16,22 @@
   border-color: var(--Dark-Header-Text);
 }
 .order-type-icon {
-  width: 20px;
+  width: 22px;
   height: auto;
 }
 
 .order-type-text {
   color: var(--Dark-Header-Text);
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .order-types {
   display: flex;
+  gap: 7px;
+}
+
+.order-time {
+  color: #7c7c7c;
+  font-size: 12px;
 }
