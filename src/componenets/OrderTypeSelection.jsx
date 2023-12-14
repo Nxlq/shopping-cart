@@ -41,20 +41,22 @@ function OrderTypeCard({
     } ${shippingTime.getDate()}`,
   };
   return (
-    <button
-      onClick={() => setActiveCard(cardId)}
-      className={`order-type-card ${isActive ? "active" : ""}`}
-    >
-      <img className="order-type-icon" src={imgPath} alt="" />
-      <span className="order-type-text">{orderType}</span>
-      <span className="order-time">
-        {orderType === "Pickup"
-          ? `Ready within ${fulfillmentTimes.pickup} hours`
-          : orderType === "Delivery"
-          ? `As soon as ${fulfillmentTimes.delivery} today`
-          : `Get it by ${fulfillmentTimes.shippingTime}`}
-      </span>
-    </button>
+    <div className={`button__wrapper ${isActive ? "dashed" : ""}`}>
+      <button
+        onClick={() => setActiveCard(cardId)}
+        className={`order-type-card ${isActive ? "active" : ""}`}
+      >
+        <img className="order-type-icon" src={imgPath} alt="" />
+        <span className="order-type-text">{orderType}</span>
+        <span className="order-time">
+          {orderType === "Pickup"
+            ? `Ready within ${fulfillmentTimes.pickup} hours`
+            : orderType === "Delivery"
+            ? `As soon as ${fulfillmentTimes.delivery} today`
+            : `Get it by ${fulfillmentTimes.shippingTime}`}
+        </span>
+      </button>
+    </div>
   );
 }
 

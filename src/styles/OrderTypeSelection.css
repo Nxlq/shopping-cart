@@ -18,10 +18,20 @@
 
 .order-type-card.active {
   border: solid 2px #008300;
+  text-decoration: underline;
 }
 
 .order-type-card.active .order-time {
   color: #008300;
+}
+
+.button__wrapper.dashed {
+  border: dashed 1px #7c7c7c;
+}
+
+.button__wrapper {
+  padding: 2px;
+  border-radius: 12px;
 }
 
 .order-type-icon {
