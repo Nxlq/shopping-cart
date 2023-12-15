@@ -14,6 +14,11 @@
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  justify-items: start;
+}
+
+.product-information > * {
+  padding-left: 3px;
 }
 
 .product-information .product-header,

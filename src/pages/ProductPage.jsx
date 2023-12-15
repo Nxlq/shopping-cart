@@ -5,13 +5,18 @@ import OrderTypeSelection from "../componenets/OrderTypeSelection";
 
 function ProductInformation({ productInfo, productRating, amountOfRatings }) {
   return (
-    <div className="product-information">
-      <h2 className="product-header">{productInfo.title}</h2>
-      <Rating productRating={productRating} amountOfRatings={amountOfRatings} />
-      <h2 className="product-price">${productInfo.price}</h2>
-      <span className="price-disclaimer">When purchased online</span>
-      <OrderTypeSelection />
-    </div>
+    <>
+      <div className="product-information">
+        <h2 className="product-header">{productInfo.title}</h2>
+        <Rating
+          productRating={productRating}
+          amountOfRatings={amountOfRatings}
+        />
+        <h2 className="product-price">${productInfo.price}</h2>
+        <span className="price-disclaimer">When purchased online</span>
+        <OrderTypeSelection />
+      </div>
+    </>
   );
 }
 
