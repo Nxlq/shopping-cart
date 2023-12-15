@@ -73,3 +73,48 @@
   align-items: flex-end;
   gap: 7px;
 }
+
+.pick-up-location {
+  color: var(--Dark-Header-Text);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.pick-up-location > span {
+  text-decoration: underline;
+}
+
+.pick-up-location > span:hover {
+  cursor: pointer;
+  color: rgb(26, 26, 26);
+}
+
+.pick-up-other {
+  color: #7c7c7c;
+  text-decoration: underline;
+}
+
+.pick-up-other:hover {
+  cursor: pointer;
+  color: #000000;
+}
+
+.fulfillment-store {
+  display: flex;
+  gap: 0.8rem;
+  padding-top: 0.8rem;
+}
+
+.product-information .cta-pickup {
+  color: #505050;
+  padding-top: 0.5rem;
+}
+
+.product-information .cta-pickup > span {
+  color: #008300;
+}
+
+.product-information .quantity-left {
+  color: #cd854a;
+  font-size: 1rem;
+}

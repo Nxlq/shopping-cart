@@ -15,6 +15,19 @@ function ProductInformation({ productInfo, productRating, amountOfRatings }) {
         <h2 className="product-price">${productInfo.price}</h2>
         <span className="price-disclaimer">When purchased online</span>
         <OrderTypeSelection />
+        <span className="fulfillment-store">
+          <span className="pick-up-location">
+            Pick up at <span>Brooklyn Bensonhurst</span>
+          </span>
+          <span className="pick-up-other">Check other stores</span>
+        </span>
+        <span className="cta-pickup">
+          <span>Ready tomorrow</span> for pickup inside the store
+        </span>
+        <span className="quantity-left">
+          Only {`${(Math.random() * 10 + 1).toFixed()} `}
+          left
+        </span>
       </div>
     </>
   );
