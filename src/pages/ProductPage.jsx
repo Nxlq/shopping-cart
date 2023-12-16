@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import "/src/styles/ProductPage.css";
 import Rating from "../componenets/Rating";
 import OrderTypeSelection from "../componenets/OrderTypeSelection";
+import QuantityDropdownBtn from "../componenets/QuantityDropdownBtn";
 
 function ProductInformation({ productInfo, productRating, amountOfRatings }) {
   return (
@@ -15,6 +16,7 @@ function ProductInformation({ productInfo, productRating, amountOfRatings }) {
         <h2 className="product-price">${productInfo.price}</h2>
         <span className="price-disclaimer">When purchased online</span>
         <OrderTypeSelection />
+        <QuantityDropdownBtn />
       </div>
     </>
   );

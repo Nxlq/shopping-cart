@@ -1,0 +1,30 @@
+.quantity-btn {
+  background-color: white;
+  width: 5.8rem;
+  height: 2.7rem;
+  font-size: 1rem;
+  color: #525252;
+  border: solid 1px #7c7c7c;
+  border-radius: 5px;
+  padding-top: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+.quantity {
+  font-weight: bold;
+}
+
+.quantity-btn:hover {
+  background-color: #f7f7f7;
+  cursor: pointer;
+}
+
+.quantity-dropdown-arrow {
+  height: 1.1rem;
+  color: var(--Dark-Header-Text);
+}
