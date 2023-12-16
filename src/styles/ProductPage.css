@@ -28,6 +28,7 @@
 
 .product-price {
   padding: 0.4rem 0rem;
+  padding-bottom: 0rem;
 }
 
 .price-disclaimer {
@@ -74,7 +75,8 @@
   gap: 7px;
 }
 
-.pick-up-location {
+.pick-up-location,
+.delivery-dark {
   color: var(--Dark-Header-Text);
   font-weight: bold;
   font-size: 1rem;
@@ -89,32 +91,60 @@
   color: rgb(26, 26, 26);
 }
 
-.pick-up-other {
+.pick-up-other,
+.delivery-other,
+.delivery-membership > span:hover {
   color: #7c7c7c;
   text-decoration: underline;
 }
 
-.pick-up-other:hover {
+.pick-up-other:hover,
+.delivery-other:hover,
+.delivery-membership > span:hover,
+.product-information .shipping-info > span:hover {
   cursor: pointer;
-  color: #000000;
+  color: #505050;
 }
 
 .fulfillment-store {
   display: flex;
   gap: 0.8rem;
   padding-top: 0.8rem;
+  padding-bottom: 0.4rem;
 }
 
-.product-information .cta-pickup {
+.product-information .fulfillment-info-green {
   color: #505050;
-  padding-top: 0.5rem;
 }
 
-.product-information .cta-pickup > span {
+.product-information .fulfillment-info-green {
   color: #008300;
 }
 
 .product-information .quantity-left {
   color: #cd854a;
   font-size: 1rem;
+}
+
+.product-page .delivery-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.delivery-membership {
+  color: #7c7c7c;
+}
+
+.delivery-membership > span {
+  color: #7c7c7c;
+  text-decoration: underline;
+}
+
+.product-information .shipping-info {
+  color: #7c7c7c;
+}
+
+.product-information .shipping-info > span {
+  text-decoration: underline;
 }

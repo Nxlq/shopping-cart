@@ -2,6 +2,73 @@ import { useEffect, useState } from "react";
 import "/src/styles/OrderTypeSelection.css";
 import { useRef } from "react";
 
+function OrderPickupMessage() {
+  return (
+    <>
+      <span className="fulfillment-store">
+        <span className="pick-up-location">
+          Pick up at <span>Brooklyn Bensonhurst</span>
+        </span>
+        <span className="pick-up-other">Check other stores</span>
+      </span>
+      <span className="cta-pickup">
+        <span className="fulfillment-info-green">Ready tomorrow</span> for
+        pickup inside the store
+      </span>
+      <span className="quantity-left">
+        Only {`${(Math.random() * 10 + 1).toFixed()} `}
+        left
+      </span>
+    </>
+  );
+}
+
+function OrderDeliveryMessage() {
+  return (
+    <>
+      <span className="fulfillment-store">
+        <div className="delivery-info">
+          <span className="delivery-dark">Same Day Delivery</span>
+          <span className="delivery-location">
+            to <span className="delivery-dark">11204 </span> from
+            <span className="delivery-dark"> Brooklyn Bensonhurst </span>
+            <span className="delivery-other">Change</span>
+          </span>
+        </div>
+      </span>
+      <span>
+        <span className="fulfillment-info-green">
+          Get it as soon as tomorrow
+        </span>{" "}
+        with Shipt
+      </span>
+      <span className="quantity-left">
+        Only {`${(Math.random() * 10 + 1).toFixed()} `}
+        left
+      </span>
+      <span className="delivery-membership">
+        Free with membership or $9.99/delivery <span>Learn more</span>
+      </span>
+    </>
+  );
+}
+
+function OrderShippingMessage() {
+  return (
+    <>
+      <span className="fulfillment-store">
+        <span className="pick-up-location">Ship to 11204</span>
+        <span className="pick-up-other">Edit location</span>
+      </span>
+
+      <span className="fulfillment-info-green">Get it by next Wednesday</span>
+      <span className="shipping-info">
+        Free shipping - <span>Exclusions Apply</span>
+      </span>
+    </>
+  );
+}
+
 function OrderTypeCard({
   imgPath,
   orderType,
@@ -90,31 +157,36 @@ function OrderTypeSelection() {
   }
 
   return (
-    <div className="order-types__container">
-      <div className="order-types">
-        <OrderTypeCard
-          imgPath={"/store-svgrepo-com.svg"}
-          orderType={"Pickup"}
-          cardId={0}
-          isActive={0 === selectedCardId}
-          setActiveCard={setActiveCard}
-        />
-        <OrderTypeCard
-          imgPath={"/delivery-svgrepo-com.svg"}
-          orderType={"Delivery"}
-          cardId={1}
-          isActive={1 === selectedCardId}
-          setActiveCard={setActiveCard}
-        />
-        <OrderTypeCard
-          imgPath={"/shipping-left-svgrepo-com.svg"}
-          orderType={"Shipping"}
-          cardId={2}
-          isActive={2 === selectedCardId}
-          setActiveCard={setActiveCard}
-        />
+    <>
+      <div className="order-types__container">
+        <div className="order-types">
+          <OrderTypeCard
+            imgPath={"/store-svgrepo-com.svg"}
+            orderType={"Pickup"}
+            cardId={0}
+            isActive={0 === selectedCardId}
+            setActiveCard={setActiveCard}
+          />
+          <OrderTypeCard
+            imgPath={"/delivery-svgrepo-com.svg"}
+            orderType={"Delivery"}
+            cardId={1}
+            isActive={1 === selectedCardId}
+            setActiveCard={setActiveCard}
+          />
+          <OrderTypeCard
+            imgPath={"/shipping-left-svgrepo-com.svg"}
+            orderType={"Shipping"}
+            cardId={2}
+            isActive={2 === selectedCardId}
+            setActiveCard={setActiveCard}
+          />
+        </div>
       </div>
-    </div>
+      {selectedCardId === 0 && <OrderPickupMessage />}
+      {selectedCardId === 1 && <OrderDeliveryMessage />}
+      {selectedCardId === 2 && <OrderShippingMessage />}
+    </>
   );
 }
 
