@@ -1,3 +1,8 @@
+.quantity-dropdown__wrapper {
+  padding: 0;
+  position: relative;
+}
+
 .quantity-btn {
   background-color: white;
   width: 5.8rem;
@@ -27,4 +32,40 @@
 .quantity-dropdown-arrow {
   height: 1.1rem;
   color: var(--Dark-Header-Text);
+}
+
+.quantity-selection {
+}
+
+.quantity-dropdown {
+  /* margin-top: 1px; */
+  border: solid 1px black;
+  margin-left: -4.3rem;
+  width: 14rem;
+  padding: 0rem 0.4rem;
+  border-radius: 4px;
+}
+
+.quantity-selection > li {
+  /* padding-left: 0.7rem; */
+  list-style-position: inside;
+  margin: 0;
+  border-bottom: solid 1px #cbcbcb;
+  width: 100%;
+}
+
+.quantity-selection > li > button {
+  position: relative;
+  left: -10px;
+  background-color: white;
+  border: none;
+  font-size: 0.9rem;
+  padding: 0.7rem 0rem;
+  width: 12rem;
+  text-align: left;
+}
+
+.quantity-selection > li > button:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
