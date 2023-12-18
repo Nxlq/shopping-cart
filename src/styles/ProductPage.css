@@ -1,5 +1,7 @@
 .product-page {
   max-width: 1200px;
+  padding: 1.5rem 0rem;
+  padding-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
@@ -147,4 +149,10 @@
 
 .product-information .shipping-info > span {
   text-decoration: underline;
+}
+
+.product-page .flex__container {
+  padding-top: 1rem;
+  display: flex;
+  gap: 1.5rem;
 }
