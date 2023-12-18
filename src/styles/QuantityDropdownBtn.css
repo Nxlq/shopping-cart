@@ -34,10 +34,9 @@
   color: var(--Dark-Header-Text);
 }
 
-.quantity-selection {
-}
-
 .quantity-dropdown {
+  background-color: white;
+  position: absolute;
   /* margin-top: 1px; */
   border: solid 1px black;
   margin-left: -4.3rem;
@@ -52,6 +51,20 @@
   margin: 0;
   border-bottom: solid 1px #cbcbcb;
   width: 100%;
+  /* list-style: none; */
+}
+
+.quantity-selection > li::marker {
+  color: white;
+}
+
+.quantity-selection > li.selected > button {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.quantity-selection > li.selected::marker {
+  color: var(--Dark-Header-Text);
 }
 
 .quantity-selection > li > button {
@@ -59,10 +72,11 @@
   left: -10px;
   background-color: white;
   border: none;
-  font-size: 0.9rem;
-  padding: 0.7rem 0rem;
+  font-size: 0.95rem;
+  padding: 0.8rem 0rem;
   width: 12rem;
   text-align: left;
+  color: var(--Dark-Header-Text);
 }
 
 .quantity-selection > li > button:hover {
