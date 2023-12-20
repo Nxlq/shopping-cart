@@ -98,11 +98,16 @@
 .icon-cart {
   padding: 0.7rem;
   border-radius: 6px;
-  margin-left: 3px;
 }
 
 .icon-cart:hover {
   background-color: #f7f7f7;
+  cursor: pointer;
+}
+
+.cart-link {
+  padding: 0 !important;
+  margin-left: 3px;
 }
 
 .arrow-dropdown {

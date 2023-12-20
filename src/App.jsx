@@ -10,6 +10,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import CategoryPage from "./pages/CategoryPage";
 import ProductPage from "./pages/ProductPage";
 import { getRandomIntInclusive } from "./helperFunctions";
+import CartPage from "./pages/CartPage";
 
 function App() {
   const { allProducts, categories, isLoading, error } = useVitalData();
@@ -148,6 +149,10 @@ function App() {
               addToCart={addToCart}
             />
           ),
+        },
+        {
+          path: "cart",
+          element: <CartPage cartItems={cartItems} />,
         },
       ],
     },
