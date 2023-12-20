@@ -4,7 +4,13 @@ import "/src/App.css";
 import CircleAdBanner from "../componenets/CircleAdBanner";
 import CardAdBanner from "../componenets/CardAdBanner";
 
-function HomePage({ allProducts, categories, topProducts, isLoading }) {
+function HomePage({
+  allProducts,
+  categories,
+  topProducts,
+  isLoading,
+  addToCart,
+}) {
   if (isLoading) return <h1>Loading...</h1>;
 
   return (
@@ -14,6 +20,7 @@ function HomePage({ allProducts, categories, topProducts, isLoading }) {
           <TopItemsDisplay
             allProducts={allProducts}
             topProducts={topProducts}
+            addToCart={addToCart}
           />
         </section>
         <section>

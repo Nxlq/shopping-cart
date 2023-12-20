@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 
 const ALL_PRODUCTS_URL = "https://fakestoreapi.com/products";
 const CATEGORIES_URL = "https://fakestoreapi.com/products/categories";

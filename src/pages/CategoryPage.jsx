@@ -3,7 +3,7 @@ import ItemCard from "../componenets/ItemCard";
 import "/src/styles/CategoryPage.css";
 import { formatCategoryHeader } from "../helperFunctions";
 
-export default function CategoryPage({ productLog }) {
+export default function CategoryPage({ productLog, addToCart }) {
   const { categoryName } = useParams();
   const categoriesProducts = productLog[categoryName];
 
@@ -17,7 +17,7 @@ export default function CategoryPage({ productLog }) {
       <h1>{formattedName}</h1>
       <div className="category-items__container">
         {categoriesProducts.map((product) => (
-          <ItemCard itemInfo={product} key={product.id} />
+          <ItemCard itemInfo={product} key={product.id} addToCart={addToCart} />
         ))}
       </div>
     </div>

@@ -9,9 +9,72 @@ import Footer from "./componenets/Footer";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import CategoryPage from "./pages/CategoryPage";
 import ProductPage from "./pages/ProductPage";
+import { getRandomIntInclusive } from "./helperFunctions";
 
 function App() {
   const { allProducts, categories, isLoading, error } = useVitalData();
+  const [cartItems, setCartItems] = useState([]);
+  const [topProducts, setTopProducts] = useState(null);
+
+  // const topProducts = allProducts && getTopProducts(6);
+
+  useEffect(() => {
+    if (!allProducts) return;
+
+    function getTopProducts(amount) {
+      const topProducts = [];
+      const amtOfProducts = allProducts.length - 1;
+
+      let randomIndex;
+
+      // randomly select the amount of top products
+      for (let i = 0; i < amount; i++) {
+        randomIndex = getRandomIntInclusive(0, amtOfProducts);
+
+        // prevents duplicate items
+        while (topProducts.includes(allProducts[randomIndex])) {
+          randomIndex = getRandomIntInclusive(0, amtOfProducts);
+        }
+
+        topProducts.push(allProducts[randomIndex]);
+      }
+
+      return topProducts;
+    }
+
+    setTopProducts(getTopProducts(6));
+  }, [allProducts]);
+
+  console.log({ cartItems });
+
+  function addToCart(itemObj, itemQuantity = 1) {
+    const itemIndexInCart = cartItems.findIndex(
+      (item) => item.id === itemObj.id
+    );
+
+    // if the item was not already in the cart, then push the new itemobj to the cart
+    if (itemIndexInCart === -1) {
+      const newItemObj = {
+        ...itemObj,
+        quantity: itemQuantity,
+      };
+
+      const newCart = [...cartItems];
+      newCart.push(newItemObj);
+      setCartItems(newCart);
+      return;
+    }
+
+    // if the item is already in the cart then replace the itemObj with a new one
+    const newItemObj = {
+      ...itemObj,
+      quantity: itemQuantity + cartItems[itemIndexInCart].quantity,
+    };
+
+    const newCart = cartItems.toSpliced(itemIndexInCart, 1, newItemObj);
+
+    setCartItems(newCart);
+  }
 
   console.log({ allProducts });
 
@@ -33,8 +96,6 @@ function App() {
     }
   }
 
-  const topProducts = allProducts && getTopProducts(6);
-
   function getProductsInCategory(categoryName) {
     if (!allProducts) return;
     return allProducts.filter((product) => product.category === categoryName);
@@ -44,33 +105,6 @@ function App() {
     if (!allProducts) return;
     const productInfo = allProducts.find((product) => product.id == productId);
     return productInfo;
-  }
-
-  function getTopProducts(amount) {
-    const topProducts = [];
-    const amtOfProducts = allProducts.length - 1;
-
-    let randomIndex;
-
-    // randomly select the amount of top products
-    for (let i = 0; i < amount; i++) {
-      randomIndex = getRandomIntInclusive(0, amtOfProducts);
-
-      // prevents duplicate items
-      while (topProducts.includes(allProducts[randomIndex])) {
-        randomIndex = getRandomIntInclusive(0, amtOfProducts);
-      }
-
-      topProducts.push(allProducts[randomIndex]);
-    }
-
-    return topProducts;
-  }
-
-  function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
   console.log({ productLog });
@@ -94,18 +128,26 @@ function App() {
             <HomePage
               allProducts={allProducts}
               categories={categories}
-              topProducts={topProducts}
               isLoading={isLoading}
+              addToCart={addToCart}
+              topProducts={topProducts}
             />
           ),
         },
         {
           path: "category/:categoryName",
-          element: <CategoryPage productLog={productLog} />,
+          element: (
+            <CategoryPage productLog={productLog} addToCart={addToCart} />
+          ),
         },
         {
           path: "product/:itemId/:itemName",
-          element: <ProductPage getProductInfo={getProductInfo} />,
+          element: (
+            <ProductPage
+              getProductInfo={getProductInfo}
+              addToCart={addToCart}
+            />
+          ),
         },
       ],
     },

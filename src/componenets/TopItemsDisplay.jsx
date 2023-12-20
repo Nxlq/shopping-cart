@@ -1,8 +1,9 @@
 import ItemCard from "./ItemCard";
 import "/src/styles/TopItemsDisplay.css";
-import LoadingBar from "./LoadingBar";
+import { getRandomIntInclusive } from "../helperFunctions";
+import { useEffect, useState } from "react";
 
-function TopItemsDisplay({ topProducts }) {
+function TopItemsDisplay({ topProducts, addToCart }) {
   if (!topProducts) return;
 
   return (
@@ -11,7 +12,7 @@ function TopItemsDisplay({ topProducts }) {
         <h1>Best-selling Top Items</h1>
         <div className="top-items">
           {topProducts.map((item) => (
-            <ItemCard key={item.id} itemInfo={item} />
+            <ItemCard key={item.id} itemInfo={item} addToCart={addToCart} />
           ))}
         </div>
       </div>

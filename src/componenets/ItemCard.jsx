@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "/src/styles/ItemCard.css";
 import { formatNameForSEO } from "../helperFunctions";
 
-function ItemCard({ itemInfo }) {
+function ItemCard({ itemInfo, addToCart }) {
   // we format the item name's path to optimize it for googles SEO, replaces the default encoded %20 from spaces to a hyphen
   const formattedPathTitle = formatNameForSEO(itemInfo.title);
 
@@ -16,7 +16,11 @@ function ItemCard({ itemInfo }) {
         <h4 className="item-price">${itemInfo.price}</h4>
         <h4 className="item-title">{itemInfo.title}</h4>
       </Link>
-      <button onClick={() => console.log("should add to cart")}>
+      <button
+        onClick={() => {
+          addToCart(itemInfo);
+        }}
+      >
         Add to cart
       </button>
     </div>

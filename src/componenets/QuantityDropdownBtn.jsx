@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "/src/styles/QuantityDropdownBtn.css";
 
-function QuantityDropdownBtn() {
-  const [quantity, setQuantity] = useState(1);
+function QuantityDropdownBtn({ quantity, setQuantity }) {
   const [isActive, setIsActive] = useState(false);
 
   const dropDownRef = useRef(null);

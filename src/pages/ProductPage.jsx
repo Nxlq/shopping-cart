@@ -4,8 +4,16 @@ import Rating from "../componenets/Rating";
 import OrderTypeSelection from "../componenets/OrderTypeSelection";
 import QuantityDropdownBtn from "../componenets/QuantityDropdownBtn";
 import AddToCardBtn from "../componenets/AddToCartBtn";
+import { useState } from "react";
 
-function ProductInformation({ productInfo, productRating, amountOfRatings }) {
+function ProductInformation({
+  productInfo,
+  productRating,
+  amountOfRatings,
+  addToCart,
+}) {
+  const [quantity, setQuantity] = useState(1);
+
   return (
     <>
       <div className="product-information">
@@ -18,15 +26,20 @@ function ProductInformation({ productInfo, productRating, amountOfRatings }) {
         <span className="price-disclaimer">When purchased online</span>
         <OrderTypeSelection />
         <div className="flex__container">
-          <QuantityDropdownBtn />
-          <AddToCardBtn widthPercentage={65} />
+          <QuantityDropdownBtn quantity={quantity} setQuantity={setQuantity} />
+          <AddToCardBtn
+            widthPercentage={65}
+            addToCart={addToCart}
+            productInfo={productInfo}
+            quantity={quantity}
+          />
         </div>
       </div>
     </>
   );
 }
 
-function ProductPage({ getProductInfo }) {
+function ProductPage({ getProductInfo, addToCart }) {
   const { itemId } = useParams();
 
   const productInfo = getProductInfo(itemId);
@@ -43,6 +56,7 @@ function ProductPage({ getProductInfo }) {
             productInfo={productInfo}
             productRating={productInfo.rating.rate}
             amountOfRatings={productInfo.rating.count}
+            addToCart={addToCart}
           />
         </div>
       )}
