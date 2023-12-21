@@ -3,8 +3,10 @@ import CardAdBanner from "../componenets/CardAdBanner";
 import CircleAdBanner from "../componenets/CircleAdBanner";
 
 function CartPage({ cartItems }) {
-  const cartSubTotal = cartItems.reduce((sum, cur) => cur.price + sum, 0);
-  const itemCount = cartItems.length;
+  const cartSubTotal = cartItems
+    .reduce((sum, cur) => cur.price * cur.quantity + sum, 0)
+    .toFixed(2);
+  const itemCount = cartItems.reduce((sum, cur) => cur.quantity + sum, 0);
   const salesTax = 1.08875;
   console.log(cartSubTotal);
   return (
