@@ -12,6 +12,13 @@ function CartItem({ itemInfo }) {
           <button>Save for later</button>
         </div>
       </div>
+      <div className="price__container">
+        <span>${(itemInfo.price * itemInfo.quantity).toFixed(2)}</span>
+        {itemInfo.quantity > 1 && (
+          <span>each ${itemInfo.price.toFixed(2)}</span>
+        )}
+      </div>
+      <button className="remove-btn">Remove</button>
     </div>
   );
 }
