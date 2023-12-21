@@ -1,6 +1,7 @@
 import "/src/styles/CartPage.css";
 import CardAdBanner from "../componenets/CardAdBanner";
 import CircleAdBanner from "../componenets/CircleAdBanner";
+import CartItemsDisplay from "../componenets/CartItemsDisplay";
 
 function CartPage({ cartItems }) {
   const cartSubTotal = cartItems
@@ -61,6 +62,7 @@ function CartPage({ cartItems }) {
             </div>
             <button className="checkout-btn">Checkout</button>
           </div>
+          <CartItemsDisplay cartItems={cartItems} itemCount={itemCount} />
         </div>
       ) : (
         <>
