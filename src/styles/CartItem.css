@@ -5,6 +5,7 @@
   color: var(--Dark-Header-Text);
   border-top: solid 1px #c0c0c0;
   padding: 2rem 0rem;
+  /* align-items: center; */
 }
 
 .cart-item > img {
@@ -51,6 +52,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  width: 8rem;
 }
 
 .cart-item .price__container span:nth-child(1) {
@@ -71,6 +73,10 @@
   border: none;
   border-radius: 5px;
   width: 8rem;
-  height: 2.8rem;
-  margin-top: 0.5rem;
+  height: 2.5rem;
+}
+
+.cart-item .remove-btn:hover {
+  cursor: pointer;
+  background-color: #ac0303;
 }

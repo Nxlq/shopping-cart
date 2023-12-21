@@ -14,12 +14,15 @@ function CartPage({ cartItems }) {
     <div className="cart-page">
       {cartItems.length > 0 ? (
         <div className="populated-cart__container">
-          <div className="cart-header">
-            <h1>Cart</h1>
-            <span>
-              ${cartSubTotal} subtotal • {itemCount}{" "}
-              {`${itemCount === 1 ? "item" : "items"}`}
-            </span>
+          <div className="cart-display__container">
+            <div className="cart-header">
+              <h1>Cart</h1>
+              <span>
+                ${cartSubTotal} subtotal • {itemCount}{" "}
+                {`${itemCount === 1 ? "item" : "items"}`}
+              </span>
+            </div>
+            <CartItemsDisplay cartItems={cartItems} itemCount={itemCount} />
           </div>
           <div className="cart-checkout">
             <h2>Order Summary</h2>
@@ -62,7 +65,6 @@ function CartPage({ cartItems }) {
             </div>
             <button className="checkout-btn">Checkout</button>
           </div>
-          <CartItemsDisplay cartItems={cartItems} itemCount={itemCount} />
         </div>
       ) : (
         <>

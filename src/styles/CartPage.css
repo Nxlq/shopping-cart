@@ -6,13 +6,13 @@
 }
 
 .populated-cart__container {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  justify-items: flex-start;
+  display: flex;
+  gap: 4rem;
 }
 
 .cart-header {
   padding-top: 1rem;
+  padding-bottom: 2rem;
   text-align: left;
 }
 
