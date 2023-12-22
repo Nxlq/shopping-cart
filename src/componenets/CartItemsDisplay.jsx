@@ -1,7 +1,7 @@
 import CartItem from "./CartItem";
 import "/src/styles/CartItemsDisplay.css";
 
-function CartItemsDisplay({ cartItems, itemCount }) {
+function CartItemsDisplay({ cartItems, itemCount, removeFromCart }) {
   return (
     <div className="cart-items-display">
       <div className="header__wrapper">
@@ -15,7 +15,11 @@ function CartItemsDisplay({ cartItems, itemCount }) {
         </div>
       </div>
       {cartItems.map((item) => (
-        <CartItem key={item.id} itemInfo={item} />
+        <CartItem
+          key={item.id}
+          itemInfo={item}
+          removeFromCart={removeFromCart}
+        />
       ))}
     </div>
   );

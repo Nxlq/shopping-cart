@@ -1,7 +1,7 @@
 import "/src/styles/CartItem.css";
 import QuantityDropdownBtn from "./QuantityDropdownBtn";
 
-function CartItem({ itemInfo }) {
+function CartItem({ itemInfo, removeFromCart }) {
   return (
     <div className="cart-item">
       <img src={itemInfo.image} alt="" />
@@ -18,7 +18,12 @@ function CartItem({ itemInfo }) {
           <span>each ${itemInfo.price.toFixed(2)}</span>
         )}
       </div>
-      <button className="remove-btn">Remove</button>
+      <button
+        className="remove-btn"
+        onClick={() => removeFromCart(itemInfo.id)}
+      >
+        Remove
+      </button>
     </div>
   );
 }

@@ -82,6 +82,11 @@ function App() {
     setCartItems(newCart);
   }
 
+  function removeFromCart(itemId) {
+    const newCart = cartItems.filter((itemObj) => itemObj.id !== itemId);
+    setCartItems(newCart);
+  }
+
   console.log({ allProducts });
 
   if (error)
@@ -157,7 +162,13 @@ function App() {
         },
         {
           path: "cart",
-          element: <CartPage cartItems={cartItems} itemCount={itemCount} />,
+          element: (
+            <CartPage
+              cartItems={cartItems}
+              itemCount={itemCount}
+              removeFromCart={removeFromCart}
+            />
+          ),
         },
       ],
     },

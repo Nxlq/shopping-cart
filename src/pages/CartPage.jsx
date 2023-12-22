@@ -3,7 +3,7 @@ import CardAdBanner from "../componenets/CardAdBanner";
 import CircleAdBanner from "../componenets/CircleAdBanner";
 import CartItemsDisplay from "../componenets/CartItemsDisplay";
 
-function CartPage({ cartItems, itemCount }) {
+function CartPage({ cartItems, itemCount, removeFromCart }) {
   const cartSubTotal = cartItems
     .reduce((sum, cur) => cur.price * cur.quantity + sum, 0)
     .toFixed(2);
@@ -22,7 +22,11 @@ function CartPage({ cartItems, itemCount }) {
                 {`${itemCount === 1 ? "item" : "items"}`}
               </span>
             </div>
-            <CartItemsDisplay cartItems={cartItems} itemCount={itemCount} />
+            <CartItemsDisplay
+              cartItems={cartItems}
+              itemCount={itemCount}
+              removeFromCart={removeFromCart}
+            />
           </div>
           <div className="cart-checkout">
             <h2>Order Summary</h2>
