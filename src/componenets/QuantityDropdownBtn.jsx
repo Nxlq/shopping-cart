@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "/src/styles/QuantityDropdownBtn.css";
 
-function QuantityDropdownBtn({ quantity, setQuantity }) {
+function QuantityDropdownBtn({ quantity, setQuantity, itemId }) {
   const [isActive, setIsActive] = useState(false);
 
   const dropDownRef = useRef(null);
@@ -34,7 +34,7 @@ function QuantityDropdownBtn({ quantity, setQuantity }) {
         <button
           onClick={(e) => {
             e.target.parentElement.classList.add("selected");
-            setQuantity(i);
+            setQuantity(i, itemId);
             setTimeout(() => {
               setIsActive(false);
             }, 60);

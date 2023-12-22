@@ -1,7 +1,12 @@
 import CartItem from "./CartItem";
 import "/src/styles/CartItemsDisplay.css";
 
-function CartItemsDisplay({ cartItems, itemCount, removeFromCart }) {
+function CartItemsDisplay({
+  cartItems,
+  itemCount,
+  removeFromCart,
+  changeItemQuantityInCart,
+}) {
   return (
     <div className="cart-items-display">
       <div className="header__wrapper">
@@ -19,6 +24,7 @@ function CartItemsDisplay({ cartItems, itemCount, removeFromCart }) {
           key={item.id}
           itemInfo={item}
           removeFromCart={removeFromCart}
+          changeItemQuantityInCart={changeItemQuantityInCart}
         />
       ))}
     </div>

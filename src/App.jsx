@@ -87,6 +87,16 @@ function App() {
     setCartItems(newCart);
   }
 
+  function changeItemQuantityInCart(newQuantity, itemId = null) {
+    const itemIndex = cartItems.findIndex((item) => item.id === itemId);
+    if (itemIndex <= -1) return;
+
+    const newCart = [...cartItems];
+    newCart[itemIndex].quantity = newQuantity;
+
+    setCartItems(newCart);
+  }
+
   console.log({ allProducts });
 
   if (error)
@@ -167,6 +177,7 @@ function App() {
               cartItems={cartItems}
               itemCount={itemCount}
               removeFromCart={removeFromCart}
+              changeItemQuantityInCart={changeItemQuantityInCart}
             />
           ),
         },
