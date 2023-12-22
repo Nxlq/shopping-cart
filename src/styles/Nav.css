@@ -108,6 +108,7 @@
 .cart-link {
   padding: 0 !important;
   margin-left: 3px;
+  position: relative;
 }
 
 .arrow-dropdown {
@@ -181,6 +182,24 @@
 .dropdown a {
   padding: 0;
   cursor: pointer;
+}
+
+.cart-quantity {
+  height: 1.3rem;
+  width: 1.3rem;
+  background-color: #cc0000;
+  color: white;
+  /* padding: 1rem; */
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: -5px;
 }
 
 /* --------------------- MINOR NAV STYLING ------------------------- */
