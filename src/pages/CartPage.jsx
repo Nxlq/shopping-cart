@@ -3,12 +3,12 @@ import CardAdBanner from "../componenets/CardAdBanner";
 import CircleAdBanner from "../componenets/CircleAdBanner";
 import CartItemsDisplay from "../componenets/CartItemsDisplay";
 
-function CartPage({ cartItems }) {
+function CartPage({ cartItems, itemCount }) {
   const cartSubTotal = cartItems
     .reduce((sum, cur) => cur.price * cur.quantity + sum, 0)
     .toFixed(2);
-  const itemCount = cartItems.reduce((sum, cur) => cur.quantity + sum, 0);
   const salesTax = 1.08875;
+
   console.log(cartSubTotal);
   return (
     <div className="cart-page">

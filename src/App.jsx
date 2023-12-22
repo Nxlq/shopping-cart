@@ -17,6 +17,11 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [topProducts, setTopProducts] = useState(null);
 
+  const itemCount =
+    cartItems.length == 0
+      ? 0
+      : cartItems.reduce((sum, cur) => cur.quantity + sum, 0);
+
   // const topProducts = allProducts && getTopProducts(6);
 
   useEffect(() => {
@@ -117,7 +122,7 @@ function App() {
       element: (
         <>
           <MinorNav />
-          <NavBar categories={categories} />
+          <NavBar categories={categories} itemCount={itemCount} />
           <Outlet />
           <Footer />
         </>
@@ -152,7 +157,7 @@ function App() {
         },
         {
           path: "cart",
-          element: <CartPage cartItems={cartItems} />,
+          element: <CartPage cartItems={cartItems} itemCount={itemCount} />,
         },
       ],
     },
