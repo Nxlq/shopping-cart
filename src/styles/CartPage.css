@@ -170,3 +170,7 @@
   cursor: pointer;
   background-color: #ac0303;
 }
+
+.cart-page .quantity-selection button:hover {
+  background-color: inherit !important;
+}
