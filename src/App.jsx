@@ -11,6 +11,7 @@ import CategoryPage from "./pages/CategoryPage";
 import ProductPage from "./pages/ProductPage";
 import { getRandomIntInclusive } from "./helperFunctions";
 import CartPage from "./pages/CartPage";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   const { allProducts, categories, isLoading, error } = useVitalData();
@@ -132,7 +133,7 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      errorElement: <h1>OOOPS ERROR UHOH! @o@</h1>,
+      errorElement: <ErrorPage />,
       path: "/",
       element: (
         <>
@@ -167,6 +168,7 @@ function App() {
             <ProductPage
               getProductInfo={getProductInfo}
               addToCart={addToCart}
+              isLoading={isLoading}
             />
           ),
         },

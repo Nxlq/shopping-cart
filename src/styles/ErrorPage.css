@@ -1,0 +1,8 @@
+.error-page a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.error-page h1 {
+  color: var(--Dark-Header-Text);
+}

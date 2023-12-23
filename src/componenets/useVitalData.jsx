@@ -11,7 +11,10 @@ function useVitalData() {
 
   useEffect(() => {
     setTimeout(() => {
-      Promise.all([fetch(ALL_PRODUCTS_URL), fetch(CATEGORIES_URL)])
+      Promise.all([
+        fetch(ALL_PRODUCTS_URL, { mode: "cors" }),
+        fetch(CATEGORIES_URL, { mode: "cors" }),
+      ])
         .then((res) => {
           if (res.status >= 400)
             throw new Error(

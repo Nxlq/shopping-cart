@@ -5,6 +5,7 @@ import OrderTypeSelection from "../componenets/OrderTypeSelection";
 import QuantityDropdownBtn from "../componenets/QuantityDropdownBtn";
 import AddToCardBtn from "../componenets/AddToCartBtn";
 import { useState } from "react";
+import ErrorPage from "./ErrorPage";
 
 function ProductInformation({
   productInfo,
@@ -39,14 +40,15 @@ function ProductInformation({
   );
 }
 
-function ProductPage({ getProductInfo, addToCart }) {
+function ProductPage({ getProductInfo, addToCart, isLoading }) {
   const { itemId } = useParams();
 
   const productInfo = getProductInfo(itemId);
 
   console.log({ productInfo });
 
-  if (!productInfo) return <h1>Loading...</h1>;
+  if (isLoading) return <h1>Loading..</h1>;
+  if (!productInfo) return <ErrorPage />;
   return (
     <>
       {productInfo && (
