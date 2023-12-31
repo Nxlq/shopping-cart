@@ -15,3 +15,7 @@
   background-color: #ac0303;
   cursor: pointer;
 }
+
+.add-to-cart-btn:active {
+  scale: 0.97;
+}

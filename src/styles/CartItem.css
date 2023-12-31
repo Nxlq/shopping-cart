@@ -80,3 +80,7 @@
   cursor: pointer;
   background-color: #ac0303;
 }
+
+.cart-item .remove-btn:active {
+  scale: 0.97;
+}

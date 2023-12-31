@@ -48,6 +48,10 @@
   cursor: pointer;
 }
 
+.item-card > button:active {
+  scale: 0.97;
+}
+
 .item-price {
   font-size: 0.9rem;
   align-self: flex-start;
