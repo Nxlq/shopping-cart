@@ -274,3 +274,72 @@
 .minor-nav-links .location-link {
   padding-right: 1.7rem;
 }
+
+/* --------------------- MINOR NAV STYLING for mobile ------------------------- */
+
+@media (max-width: 600px) {
+  .nav-links {
+    flex-wrap: wrap;
+  }
+
+  .minor-nav-links.right {
+    display: none;
+  }
+
+  .minor-nav-links.left {
+    padding-left: 0rem;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  ul.nav-links {
+    display: none;
+  }
+
+  .nav-shopping {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+  }
+
+  .search-bar__container {
+    display: flex;
+    background-color: #f7f7f7;
+    border-radius: 6px;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    grid-area: 2 / 1 / 3 / 4;
+    width: 90%;
+    justify-content: space-between;
+  }
+
+  svg.mic-icon {
+    display: none;
+  }
+
+  .nav-shopping input {
+    border: none;
+    width: 16rem;
+    font-size: 1.05rem;
+    grid-area: 2 / 1 / 3 / 4;
+    /* padding-left: 0.5rem;
+    padding-right: 0.5rem; */
+  }
+
+  .nav-shopping .sign-in__container {
+    display: none;
+  }
+
+  .logo-link {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .logo {
+    padding: 0;
+  }
+
+  .cart-link {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+}
