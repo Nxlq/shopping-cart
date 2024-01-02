@@ -13,7 +13,7 @@ function ItemCard({ itemInfo, addToCart }) {
         className="item-card-link"
       >
         <img className="" src={itemInfo.image} alt="" />
-        <h4 className="item-price">${itemInfo.price}</h4>
+        <h4 className="item-price">${itemInfo.price.toFixed(2)}</h4>
         <h4 className="item-title">{itemInfo.title}</h4>
       </Link>
       <button

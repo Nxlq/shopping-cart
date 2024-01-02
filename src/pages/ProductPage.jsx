@@ -23,7 +23,7 @@ function ProductInformation({
           productRating={productRating}
           amountOfRatings={amountOfRatings}
         />
-        <h2 className="product-price">${productInfo.price}</h2>
+        <h2 className="product-price">${productInfo.price.toFixed(2)}</h2>
         <span className="price-disclaimer">When purchased online</span>
         <OrderTypeSelection />
         <div className="flex__container">
