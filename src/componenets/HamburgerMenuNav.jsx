@@ -30,6 +30,33 @@ function HamburgerMenuNav({ categories }) {
                 ))}
               </div>
             </div>
+            <ul>
+              <li>
+                <a onClick={(e) => e.preventDefault()} href="">
+                  Registry
+                </a>
+              </li>
+              <li>
+                <a onClick={(e) => e.preventDefault()} href="">
+                  Weekly Ad
+                </a>
+              </li>
+              <li>
+                <a onClick={(e) => e.preventDefault()} href="">
+                  Redcard
+                </a>
+              </li>
+              <li>
+                <a onClick={(e) => e.preventDefault()} href="">
+                  Target Circle
+                </a>
+              </li>
+              <li>
+                <a onClick={(e) => e.preventDefault()} href="">
+                  Find Stores
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       )}
