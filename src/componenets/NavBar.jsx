@@ -94,7 +94,7 @@ function NavBar({ categories, itemCount }) {
             src="/Target_Bullseye-Logo_Red_transparent.png"
           />
         </Link>
-        <HamburgerMenuNav />
+        <HamburgerMenuNav categories={categories} />
         <ul className="nav-links">
           <li id="categories-btn">
             <DropDownCategories categories={categories} />
