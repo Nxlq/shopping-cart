@@ -1,0 +1,11 @@
+.hamburger-menu-icon {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .hamburger-menu-icon {
+    display: block;
+    width: 1.5rem;
+    height: auto;
+  }
+}

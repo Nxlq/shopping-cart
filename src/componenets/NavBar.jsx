@@ -2,6 +2,7 @@ import "/src/styles/Nav.css";
 import { formatCategoryHeader } from "../helperFunctions";
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import HamburgerMenuNav from "./HamburgerMenuNav";
 
 function DropDownCategories({ categories }) {
   const [isActive, setIsActive] = useState(false);
@@ -93,6 +94,7 @@ function NavBar({ categories, itemCount }) {
             src="/Target_Bullseye-Logo_Red_transparent.png"
           />
         </Link>
+        <HamburgerMenuNav />
         <ul className="nav-links">
           <li id="categories-btn">
             <DropDownCategories categories={categories} />
