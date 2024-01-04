@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "/src/styles/HamburgerMenuNav.css";
 import CategoryDisplay from "./CategoryDisplay.jsx";
 
@@ -8,6 +8,15 @@ function HamburgerMenuNav({ categories }) {
   function toggleIsActive() {
     setIsActive(!isActive);
   }
+
+  useEffect(() => {
+    if (!isActive) return;
+    if (isActive) {
+      document.body.style.overflow = "hidden";
+    }
+
+    // return () => (document.body.style.position = "static");
+  }, [isActive]);
 
   return (
     <>
@@ -30,6 +39,33 @@ function HamburgerMenuNav({ categories }) {
                 ))}
               </div>
             </div>
+            <ul>
+              <li>
+                <a onClick={(e) => e.preventDefault()} href="">
+                  Registry
+                </a>
+              </li>
+              <li>
+                <a onClick={(e) => e.preventDefault()} href="">
+                  Weekly Ad
+                </a>
+              </li>
+              <li>
+                <a onClick={(e) => e.preventDefault()} href="">
+                  Redcard
+                </a>
+              </li>
+              <li>
+                <a onClick={(e) => e.preventDefault()} href="">
+                  Target Circle
+                </a>
+              </li>
+              <li>
+                <a onClick={(e) => e.preventDefault()} href="">
+                  Find Stores
+                </a>
+              </li>
+            </ul>
             <ul>
               <li>
                 <a onClick={(e) => e.preventDefault()} href="">
