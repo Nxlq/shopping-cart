@@ -12,6 +12,7 @@ import ProductPage from "./pages/ProductPage";
 import { getRandomIntInclusive } from "./helperFunctions";
 import CartPage from "./pages/CartPage";
 import ErrorPage from "./pages/ErrorPage";
+import Nav from "./componenets/Nav";
 
 function App() {
   const { allProducts, categories, isLoading, error } = useVitalData();
@@ -137,8 +138,7 @@ function App() {
       path: "/",
       element: (
         <>
-          <MinorNav />
-          <NavBar categories={categories} itemCount={itemCount} />
+          <Nav categories={categories} itemCount={itemCount} />
           <Outlet />
           <Footer />
         </>

@@ -2,7 +2,8 @@ import "/src/styles/Nav.css";
 import { formatCategoryHeader } from "../helperFunctions";
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import HamburgerMenuNav from "./HamburgerMenuNav";
+import HamburgerMenuNav from "./HamburgerNavButton";
+import HamburgerNavButton from "./HamburgerNavButton";
 
 function DropDownCategories({ categories }) {
   const [isActive, setIsActive] = useState(false);
@@ -84,7 +85,7 @@ function DropDownCategories({ categories }) {
   );
 }
 
-function NavBar({ categories, itemCount }) {
+function NavBar({ categories, itemCount, setIsHamburgerActive }) {
   return (
     <>
       <nav className="nav-shopping">
@@ -94,7 +95,7 @@ function NavBar({ categories, itemCount }) {
             src="/Target_Bullseye-Logo_Red_transparent.png"
           />
         </Link>
-        <HamburgerMenuNav categories={categories} />
+        <HamburgerNavButton setIsHamburgerActive={setIsHamburgerActive} />
         <ul className="nav-links">
           <li id="categories-btn">
             <DropDownCategories categories={categories} />
