@@ -99,4 +99,18 @@
     width: 2.5rem;
     height: auto;
   }
+
+  .mobile-nav-popout.active {
+    animation: slide-out 500ms ease-out;
+  }
+
+  @keyframes slide-out {
+    from {
+      transform: translateX(-90vw);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
 }

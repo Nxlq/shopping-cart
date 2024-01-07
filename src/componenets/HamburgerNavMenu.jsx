@@ -1,5 +1,5 @@
 import CategoryDisplay from "./CategoryDisplay";
-import { useEffect, useReducer, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function HamburgerNavMenu({
   categories,
@@ -12,7 +12,9 @@ function HamburgerNavMenu({
     const root = document.getElementById("root");
     if (!isHamburgerActive) return;
 
-    if (isHamburgerActive) root.classList.add("overflow-hidden");
+    if (isHamburgerActive) {
+      root.classList.add("overflow-hidden");
+    }
 
     function handleOutsideClick(e) {
       if (!menuRef.current.contains(e.target)) {
@@ -31,7 +33,10 @@ function HamburgerNavMenu({
   return (
     <>
       <div className="popout-background">
-        <div className="mobile-nav-popout" ref={menuRef}>
+        <div
+          className={`mobile-nav-popout ${isHamburgerActive ? "active" : ""}`}
+          ref={menuRef}
+        >
           <div className="mobile-nav-header__wrapper">
             <h3>Menu</h3>
             <img
