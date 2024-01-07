@@ -1,10 +1,35 @@
 import CategoryDisplay from "./CategoryDisplay";
+import { useEffect, useReducer, useRef } from "react";
 
-function HamburgerNavMenu({ categories }) {
+function HamburgerNavMenu({
+  categories,
+  isHamburgerActive,
+  setIsHamburgerActive,
+}) {
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    if (!isHamburgerActive) return;
+    const root = document.getElementById("root");
+
+    if (isHamburgerActive) root.classList.add("overflow-hidden");
+
+    function handleOutsideClick(e) {
+      if (!menuRef.current.contains(e.target)) {
+        root.classList.remove("overflow-hidden");
+        setIsHamburgerActive(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, [isHamburgerActive, setIsHamburgerActive]);
+
   return (
     <>
       <div className="popout-background">
-        <div className="mobile-nav-popout">
+        <div className="mobile-nav-popout" ref={menuRef}>
           <h3>Menu</h3>
           <div className="categories">
             <h4>Categories</h4>

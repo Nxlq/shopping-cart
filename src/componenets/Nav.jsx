@@ -1,6 +1,6 @@
 import NavBar from "./NavBar";
 import MinorNav from "./MinorNavBar";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import HamburgerNavMenu from "./HamburgerNavMenu";
 import "/src/styles/HamburgerMenuNav.css";
 
@@ -15,7 +15,13 @@ function Nav({ categories, itemCount }) {
         itemCount={itemCount}
         setIsHamburgerActive={setIsHamburgerActive}
       />
-      {isHamburgerActive && <HamburgerNavMenu categories={categories} />}
+      {isHamburgerActive && (
+        <HamburgerNavMenu
+          categories={categories}
+          isHamburgerActive={isHamburgerActive}
+          setIsHamburgerActive={setIsHamburgerActive}
+        />
+      )}
     </>
   );
 }

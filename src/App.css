@@ -13,11 +13,15 @@
   --red-header-text: #cc0000;
 }
 
-body {
-  /* height: 100vh; */
+.overflow-hidden {
+  overflow: hidden;
 }
 
 @media (max-width: 600px) {
+  #root {
+    height: 100vh;
+    height: 100svh;
+  }
 }
 
 h1,
