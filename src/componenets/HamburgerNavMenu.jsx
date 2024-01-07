@@ -1,5 +1,5 @@
 import CategoryDisplay from "./CategoryDisplay";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 function HamburgerNavMenu({
   categories,

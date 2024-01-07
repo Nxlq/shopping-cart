@@ -2,7 +2,6 @@ import "/src/styles/Nav.css";
 import { formatCategoryHeader } from "../helperFunctions";
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import HamburgerMenuNav from "./HamburgerNavButton";
 import HamburgerNavButton from "./HamburgerNavButton";
 
 function DropDownCategories({ categories }) {
