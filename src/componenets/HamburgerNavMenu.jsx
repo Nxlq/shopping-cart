@@ -30,7 +30,15 @@ function HamburgerNavMenu({
     <>
       <div className="popout-background">
         <div className="mobile-nav-popout" ref={menuRef}>
-          <h3>Menu</h3>
+          <div className="mobile-nav-header__wrapper">
+            <h3>Menu</h3>
+            <img
+              onClick={() => setIsHamburgerActive(false)}
+              className="hamburger-close-btn"
+              src="/close-round-svgrepo-com.svg"
+              alt="close menu button"
+            />
+          </div>
           <div className="categories">
             <h4>Categories</h4>
             <div className="categories-container">

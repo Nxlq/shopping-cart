@@ -25,18 +25,24 @@
     left: 0;
     top: 0;
     height: 100dvh;
-    width: 92vw;
+    width: 90vw;
     z-index: 3;
     padding: 0rem 0rem;
     overflow-y: scroll;
   }
 
-  .mobile-nav-popout > h3 {
+  .mobile-nav-popout .mobile-nav-header__wrapper {
+    display: flex;
+    border-bottom: solid 1px rgb(199, 199, 199);
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+  }
+
+  .mobile-nav-popout > .mobile-nav-header__wrapper > h3 {
     font-size: 1.4rem;
     text-align: left;
-    padding: 1.2rem 1rem;
     color: #333333;
-    border-bottom: solid 1px rgb(199, 199, 199);
   }
 
   .mobile-nav-popout .categories-container {
@@ -87,5 +93,10 @@
 
   .mobile-nav-popout > ul > li a {
     color: #3b3b3b !important;
+  }
+
+  .hamburger-close-btn {
+    width: 2.5rem;
+    height: auto;
   }
 }
