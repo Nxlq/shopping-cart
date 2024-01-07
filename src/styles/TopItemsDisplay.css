@@ -15,3 +15,9 @@
   font-size: var(--section-header-size);
   color: var(--Dark-Header-Text);
 }
+
+@media (max-width: 600px) {
+  .top-items-display {
+    display: none;
+  }
+}
