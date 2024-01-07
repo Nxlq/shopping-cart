@@ -9,21 +9,23 @@ function HamburgerNavMenu({
   const menuRef = useRef(null);
 
   useEffect(() => {
-    if (!isHamburgerActive) return;
     const root = document.getElementById("root");
+    if (!isHamburgerActive) return;
 
     if (isHamburgerActive) root.classList.add("overflow-hidden");
 
     function handleOutsideClick(e) {
       if (!menuRef.current.contains(e.target)) {
-        root.classList.remove("overflow-hidden");
         setIsHamburgerActive(false);
       }
     }
 
     document.addEventListener("mousedown", handleOutsideClick);
 
-    return () => document.removeEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      root.classList.remove("overflow-hidden");
+    };
   }, [isHamburgerActive, setIsHamburgerActive]);
 
   return (
