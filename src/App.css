@@ -80,3 +80,10 @@ a {
   margin-left: auto;
   position: absolute;
 }
+
+@media (max-width: 600px) {
+  .home-page {
+    max-width: 100%;
+    padding: 0;
+  }
+}

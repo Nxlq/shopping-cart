@@ -71,3 +71,33 @@
 .circle-banner:hover h3 {
   text-decoration: underline;
 }
+
+@media (max-width: 600px) {
+  .circle-banner-text {
+    padding-left: 2rem;
+    padding-right: 0;
+  }
+
+  .circle-banner-right img {
+    height: 50%;
+    width: auto;
+  }
+
+  .circle-banner-text {
+    background-color: #eaeaea;
+    text-align: left;
+    width: 70%;
+  }
+
+  .circle-banner-right {
+    display: flex;
+    background-color: #afacaf;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .circle-banner-text h3 {
+    font-size: 0.95rem;
+  }
+}

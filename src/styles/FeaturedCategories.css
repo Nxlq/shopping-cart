@@ -44,5 +44,6 @@
   .categories {
     flex-direction: column;
     gap: 2rem;
+    max-width: 100%;
   }
 }

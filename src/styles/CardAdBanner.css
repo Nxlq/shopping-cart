@@ -72,6 +72,7 @@
 
 .card-banner-right img {
   height: 73%;
+  width: auto;
   padding-left: 1rem;
 }
 
@@ -90,4 +91,48 @@
 
 .gray {
   color: #666666;
+}
+
+@media (max-width: 600px) {
+  .banner-header {
+    font-size: 1rem;
+  }
+
+  .rounded-edge {
+    display: none;
+  }
+
+  .card-banner-text {
+    padding-left: 2rem;
+    padding-right: 0;
+    width: 70%;
+  }
+
+  .card-banner-right {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-banner-right img {
+    height: 35%;
+    padding-left: 0;
+  }
+
+  .card-message {
+    font-size: 0.85rem;
+    padding-top: 0.95rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-header span {
+    font-size: 0.9rem;
+  }
+
+  .card-header span:not(:first-child) {
+    padding-left: 0px;
+  }
 }
