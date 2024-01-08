@@ -106,3 +106,16 @@ footer {
   background-color: #919191;
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  .footer-bottom__wrapper {
+    width: 100%;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .foot-legal-links ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
