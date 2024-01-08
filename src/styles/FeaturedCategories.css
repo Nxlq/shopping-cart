@@ -18,6 +18,7 @@
 
 .categories img {
   width: 10rem;
+  height: auto;
 }
 
 .category-display h3 {
