@@ -53,6 +53,7 @@ function ProductPage({ getProductInfo, addToCart, isLoading }) {
     <>
       {productInfo && (
         <div className="product-page">
+          <h2 className="product-header mobile">{productInfo.title}</h2>
           <img className="product-image" src={`${productInfo.image}`}></img>
           <ProductInformation
             productInfo={productInfo}
