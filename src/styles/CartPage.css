@@ -196,4 +196,16 @@
   .empty-cart-content > button {
     width: 72%;
   }
+
+  .populated-cart__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.3rem;
+    max-width: 100%;
+  }
+
+  .cart-checkout {
+    padding: 0 1rem;
+    padding-bottom: 0.6rem;
+  }
 }
