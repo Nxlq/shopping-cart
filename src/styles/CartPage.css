@@ -174,3 +174,26 @@
 .cart-page .quantity-selection button:hover {
   background-color: inherit !important;
 }
+
+@media (max-width: 600px) {
+  .cart-page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .cart-page .empty-cart-content img {
+    width: 240px;
+    height: auto;
+  }
+
+  .empty-cart__container {
+    width: 91%;
+  }
+
+  .empty-cart-content > button {
+    width: 72%;
+  }
+}
