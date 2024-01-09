@@ -10,31 +10,27 @@ function useVitalData() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      Promise.all([
-        fetch(ALL_PRODUCTS_URL, { mode: "cors" }),
-        fetch(CATEGORIES_URL, { mode: "cors" }),
-      ])
-        .then((res) => {
-          if (res.status >= 400)
-            throw new Error(
-              `something went wrong... error code: ${res.status}`
-            );
-          return res.map((r) => r.json());
-        })
-        .then((json) => Promise.all(json))
-        .then((data) => {
-          const [allProducts, categories] = data;
-          setAllProducts(allProducts);
-          setCategories(categories);
-          return data;
-        })
-        .catch((err) => {
-          console.log(err);
-          setError(err);
-        })
-        .finally(() => setIsLoading(false));
-    }, 1000);
+    Promise.all([
+      fetch(ALL_PRODUCTS_URL, { mode: "cors" }),
+      fetch(CATEGORIES_URL, { mode: "cors" }),
+    ])
+      .then((res) => {
+        if (res.status >= 400)
+          throw new Error(`something went wrong... error code: ${res.status}`);
+        return res.map((r) => r.json());
+      })
+      .then((json) => Promise.all(json))
+      .then((data) => {
+        const [allProducts, categories] = data;
+        setAllProducts(allProducts);
+        setCategories(categories);
+        return data;
+      })
+      .catch((err) => {
+        console.log(err);
+        setError(err);
+      })
+      .finally(() => setIsLoading(false));
   }, []);
 
   return { allProducts, categories, isLoading, error };
