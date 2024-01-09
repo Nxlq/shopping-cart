@@ -135,7 +135,11 @@ function App() {
       path: "/",
       element: (
         <>
-          <Nav categories={categories} itemCount={itemCount} />
+          <Nav
+            categories={categories}
+            itemCount={itemCount}
+            isLoading={isLoading}
+          />
           <Outlet />
           <Footer />
         </>
@@ -156,7 +160,11 @@ function App() {
         {
           path: "category/:categoryName",
           element: (
-            <CategoryPage productLog={productLog} addToCart={addToCart} />
+            <CategoryPage
+              productLog={productLog}
+              addToCart={addToCart}
+              isLoading={isLoading}
+            />
           ),
         },
         {

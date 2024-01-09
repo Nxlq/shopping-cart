@@ -5,7 +5,7 @@ import HamburgerNavMenu from "./HamburgerNavMenu";
 import "/src/styles/HamburgerMenuNav.css";
 import { useLocation } from "react-router-dom";
 
-function Nav({ categories, itemCount }) {
+function Nav({ categories, itemCount, isLoading }) {
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
   const { pathname } = useLocation();
 
@@ -27,6 +27,7 @@ function Nav({ categories, itemCount }) {
           categories={categories}
           isHamburgerActive={isHamburgerActive}
           setIsHamburgerActive={setIsHamburgerActive}
+          isLoading={isLoading}
         />
       )}
     </>

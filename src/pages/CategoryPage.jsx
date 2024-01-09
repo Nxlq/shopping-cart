@@ -3,12 +3,11 @@ import ItemCard from "../components/ItemCard";
 import "/src/styles/CategoryPage.css";
 import { formatCategoryHeader } from "../helperFunctions";
 
-export default function CategoryPage({ productLog, addToCart }) {
+export default function CategoryPage({ productLog, addToCart, isLoading }) {
   const { categoryName } = useParams();
   const categoriesProducts = productLog[categoryName];
 
-  if (!categoriesProducts)
-    return <h1>OOOPS ERROR ? @O@ PAGE THAT CATEFORY DOESNTT EXIST</h1>;
+  if (isLoading) return <h1>Loading...</h1>;
 
   const formattedName = formatCategoryHeader(categoryName);
 
