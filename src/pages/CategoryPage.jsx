@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import ItemCard from "../componenets/ItemCard";
+import ItemCard from "../components/ItemCard";
 import "/src/styles/CategoryPage.css";
 import { formatCategoryHeader } from "../helperFunctions";
 

@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
 import HomePage from "./pages/HomePage";
-
 import "./App.css";
-import NavBar from "./componenets/NavBar";
-import MinorNav from "./componenets/MinorNavBar";
-import useVitalData from "./componenets/useVitalData";
-import Footer from "./componenets/Footer";
+import useVitalData from "./components/useVitalData";
+import Footer from "./components/Footer";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import CategoryPage from "./pages/CategoryPage";
 import ProductPage from "./pages/ProductPage";
 import { getRandomIntInclusive } from "./helperFunctions";
 import CartPage from "./pages/CartPage";
 import ErrorPage from "./pages/ErrorPage";
-import Nav from "./componenets/Nav";
+import Nav from "./components/Nav";
 
 function App() {
   const { allProducts, categories, isLoading, error } = useVitalData();

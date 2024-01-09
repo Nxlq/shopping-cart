@@ -1,6 +1,6 @@
 import NavBar from "./NavBar";
 import MinorNav from "./MinorNavBar";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import HamburgerNavMenu from "./HamburgerNavMenu";
 import "/src/styles/HamburgerMenuNav.css";
 import { useLocation } from "react-router-dom";

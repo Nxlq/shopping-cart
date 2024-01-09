@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import "/src/styles/ProductPage.css";
-import Rating from "../componenets/Rating";
-import OrderTypeSelection from "../componenets/OrderTypeSelection";
-import QuantityDropdownBtn from "../componenets/QuantityDropdownBtn";
-import AddToCardBtn from "../componenets/AddToCartBtn";
+import Rating from "../components/Rating";
+import OrderTypeSelection from "../components/OrderTypeSelection";
+import QuantityDropdownBtn from "../components/QuantityDropdownBtn";
+import AddToCardBtn from "../components/AddToCartBtn";
 import { useState } from "react";
 import ErrorPage from "./ErrorPage";
 

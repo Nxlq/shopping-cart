@@ -1,7 +1,7 @@
 import "/src/styles/CartPage.css";
-import CardAdBanner from "../componenets/CardAdBanner";
-import CircleAdBanner from "../componenets/CircleAdBanner";
-import CartItemsDisplay from "../componenets/CartItemsDisplay";
+import CardAdBanner from "../components/CardAdBanner";
+import CircleAdBanner from "../components/CircleAdBanner";
+import CartItemsDisplay from "../components/CartItemsDisplay";
 
 function CartPage({
   cartItems,

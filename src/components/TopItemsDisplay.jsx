@@ -1,7 +1,5 @@
 import ItemCard from "./ItemCard";
 import "/src/styles/TopItemsDisplay.css";
-import { getRandomIntInclusive } from "../helperFunctions";
-import { useEffect, useState } from "react";
 
 function TopItemsDisplay({ topProducts, addToCart }) {
   if (!topProducts) return;

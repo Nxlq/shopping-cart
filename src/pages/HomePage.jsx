@@ -1,8 +1,8 @@
-import TopItemsDisplay from "../componenets/TopItemsDisplay";
-import FeaturedCategories from "../componenets/FeaturedCategories";
+import TopItemsDisplay from "../components/TopItemsDisplay";
+import FeaturedCategories from "../components/FeaturedCategories";
 import "/src/App.css";
-import CircleAdBanner from "../componenets/CircleAdBanner";
-import CardAdBanner from "../componenets/CardAdBanner";
+import CircleAdBanner from "../components/CircleAdBanner";
+import CardAdBanner from "../components/CardAdBanner";
 
 function HomePage({
   allProducts,
