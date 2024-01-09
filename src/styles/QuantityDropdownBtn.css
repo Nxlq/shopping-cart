@@ -84,3 +84,9 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
+@media (max-width: 600px) {
+  .product-page .quantity-dropdown {
+    margin-left: 0rem;
+  }
+}
