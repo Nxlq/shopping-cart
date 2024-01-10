@@ -87,6 +87,9 @@
     background-color: #eaeaea;
     text-align: left;
     width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .circle-banner-right {
