@@ -4,7 +4,7 @@ import Rating from "../components/Rating";
 import OrderTypeSelection from "../components/OrderTypeSelection";
 import QuantityDropdownBtn from "../components/QuantityDropdownBtn";
 import AddToCardBtn from "../components/AddToCartBtn";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ErrorPage from "./ErrorPage";
 
 function ProductInformation({
@@ -46,6 +46,10 @@ function ProductPage({ getProductInfo, addToCart, isLoading }) {
   const productInfo = getProductInfo(itemId);
 
   console.log({ productInfo });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (isLoading) return <h1>Loading..</h1>;
   if (!productInfo) return <ErrorPage />;

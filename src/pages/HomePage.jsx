@@ -3,6 +3,7 @@ import FeaturedCategories from "../components/FeaturedCategories";
 import "/src/App.css";
 import CircleAdBanner from "../components/CircleAdBanner";
 import CardAdBanner from "../components/CardAdBanner";
+import { useEffect } from "react";
 
 function HomePage({
   allProducts,
@@ -11,6 +12,10 @@ function HomePage({
   isLoading,
   addToCart,
 }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (isLoading) return <h1>Loading...</h1>;
 
   return (

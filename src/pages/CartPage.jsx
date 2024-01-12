@@ -2,6 +2,7 @@ import "/src/styles/CartPage.css";
 import CardAdBanner from "../components/CardAdBanner";
 import CircleAdBanner from "../components/CircleAdBanner";
 import CartItemsDisplay from "../components/CartItemsDisplay";
+import { useEffect } from "react";
 
 function CartPage({
   cartItems,
@@ -13,6 +14,10 @@ function CartPage({
     .reduce((sum, cur) => cur.price * cur.quantity + sum, 0)
     .toFixed(2);
   const salesTax = 1.08875;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   console.log(cartSubTotal);
   return (
