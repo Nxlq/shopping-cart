@@ -107,7 +107,6 @@ function Rating({ productRating, amountOfRatings }) {
 
   // filling the svgArr until the max length has been reached and dynamically calculating the fill amount
   while (svgsArr.length < maxRating) {
-    console.log({ starsToFill });
     svgsArr.push(
       <StarSvg
         starPos={`${i}`}
@@ -118,9 +117,6 @@ function Rating({ productRating, amountOfRatings }) {
     starsToFill = starsToFill > 1 ? starsToFill - 1 : 0;
     i += 1;
   }
-
-  console.log(svgsArr);
-  console.log({ amountOfRatings });
 
   const questions = (Math.random() * 100).toFixed();
 

@@ -50,8 +50,6 @@ function App() {
     setTopProducts(getTopProducts(6));
   }, [allProducts]);
 
-  console.log({ cartItems });
-
   function addToCart(itemObj, itemQuantity = 1) {
     const itemIndexInCart = cartItems.findIndex(
       (item) => item.id === itemObj.id
@@ -96,8 +94,6 @@ function App() {
     setCartItems(newCart);
   }
 
-  console.log({ allProducts });
-
   if (error)
     return (
       <h1>
@@ -126,8 +122,6 @@ function App() {
     const productInfo = allProducts.find((product) => product.id == productId);
     return productInfo;
   }
-
-  console.log({ productLog });
 
   const router = createBrowserRouter([
     {
@@ -200,18 +194,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <MinorNav />
-<NavBar />
-{isLoading ? (
-  <h1>loading...</h1>
-) : (
-  <HomePage
-    allProducts={allProducts}
-    categories={categories}
-    topProducts={topProducts}
-  />
-)}
-<Footer /> */
-}

@@ -19,7 +19,6 @@ function CartPage({
     window.scrollTo(0, 0);
   }, []);
 
-  console.log(cartSubTotal);
   return (
     <div className="cart-page">
       {cartItems.length > 0 ? (
